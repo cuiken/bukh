@@ -2,11 +2,16 @@ package com.website.bukh.entity;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.persistence.Transient;
+import java.util.Date;
 
 /**
  * Created by ken.cui on 14-2-16.
  */
+@Entity
+@Table(name="ss_user")
 public class User extends IdEntity {
     private String loginName;
     private String plainPassword;
@@ -15,6 +20,7 @@ public class User extends IdEntity {
     private String name;
     private String email;
     private String status;
+    private Date registerDate;
 
 
     public String getLoginName() {
@@ -74,6 +80,14 @@ public class User extends IdEntity {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
     }
 
     @Override

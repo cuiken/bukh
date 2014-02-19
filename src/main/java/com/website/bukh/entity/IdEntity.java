@@ -3,11 +3,13 @@ package com.website.bukh.entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  * Created by ken.cui on 14-2-16.
  */
-public class IdEntity {
+@MappedSuperclass
+public abstract class IdEntity {
     protected Long id;
 
     @Id

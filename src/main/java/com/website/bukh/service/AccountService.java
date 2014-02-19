@@ -5,6 +5,7 @@ import com.website.bukh.entity.User;
 import com.website.bukh.service.ShiroDbRealm.ShiroUser;
 import com.website.bukh.util.Digests;
 import com.website.bukh.util.Encodes;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.hibernate.service.spi.ServiceException;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,22 +36,35 @@ public class AccountService {
         return userDao.get(id);
     }
 
-    public void saveUser(User user) {
-        if (isSupervisor(user)) {
-            logger.warn("操作员{}尝试修改超级管理员用户", SecurityUtils.getSubject().getPrincipal());
-            throw new ServiceException("不能修改超级管理员用户");
-        }
-        entryptPassword(user);
 
+    public void registerUser(User user) {
+        entryptPassword(user);
+        user.setRegisterDate(new Date());
+        user.setStatus("1");
         userDao.save(user);
+    }
+
+    public void updateUser(User user) {
+        if (StringUtils.isNotBlank(user.getPlainPassword())) {
+            entryptPassword(user);
+        }
+        userDao.save(user);
+    }
+
+    public void deleteUser(Long id) {
+        if (isSupervisor(id)) {
+            logger.warn("操作员{}尝试删除超级管理员用户", getCurrentUserName());
+            throw new ServiceException("不能删除超级管理员用户");
+        }
+        userDao.delete(id);
 
     }
 
     /**
      * 判断是否超级管理员.
      */
-    private boolean isSupervisor(User user) {
-        return (user.getId() != null && user.getId() == 1L);
+    private boolean isSupervisor(Long id) {
+        return id == 1;
     }
 
     public List<User> getAllUser() {
