@@ -40,7 +40,7 @@ public class AccountService {
     public void registerUser(User user) {
         entryptPassword(user);
         user.setRegisterDate(new Date());
-        user.setStatus("1");
+        user.setStatus("disabled");
         userDao.save(user);
     }
 

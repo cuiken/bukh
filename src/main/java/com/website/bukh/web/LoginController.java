@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginController {
     @RequestMapping(method = RequestMethod.GET)
     public String login() {
-        return "account/login";
+        return "login";
     }
 
     @RequestMapping(method = RequestMethod.POST)
     public String fail(@RequestParam(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM) String userName, Model model) {
         model.addAttribute(FormAuthenticationFilter.DEFAULT_USERNAME_PARAM, userName);
-        return "account/login";
+        return "login";
     }
 }

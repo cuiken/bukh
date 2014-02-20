@@ -1,5 +1,6 @@
 package com.website.bukh.web;
 
+import com.google.common.collect.Maps;
 import com.website.bukh.entity.User;
 import com.website.bukh.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 管理员管理用户的Controller.
@@ -19,6 +21,12 @@ import java.util.List;
 @RequestMapping(value = "/admin/user")
 public class UserAdminController {
 
+    private static Map<String, String> allStatus = Maps.newHashMap();
+
+    static {
+        allStatus.put("enabled", "有效");
+        allStatus.put("disabled", "无效");
+    }
     @Autowired
     private AccountService accountService;
 
@@ -26,13 +34,14 @@ public class UserAdminController {
     public String list(Model model) {
         List<User> users = accountService.getAllUser();
         model.addAttribute("users", users);
-
+        model.addAttribute("allStatus", allStatus);
         return "account/adminUserList";
     }
 
     @RequestMapping(value = "update/{id}", method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("user", accountService.getUser(id));
+        model.addAttribute("allStatus", allStatus);
         return "account/adminUserForm";
     }
 

@@ -3,14 +3,24 @@ package com.website.bukh.entity;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 /**
- * 商品详细页轮播图片
+ * 轮播图片
  * Created by ken.cui on 14-2-16.
  */
 public class CarouselPicture extends IdEntity {
 
+
     private String smallSize;
     private String largeSize;
-    private String relativePath;
+    private Long sort;
+    private Long position;
+
+    public Long getPosition() {
+        return position;
+    }
+
+    public void setPosition(Long position) {
+        this.position = position;
+    }
 
     public String getSmallSize() {
         return smallSize;
@@ -28,12 +38,12 @@ public class CarouselPicture extends IdEntity {
         this.largeSize = largeSize;
     }
 
-    public String getRelativePath() {
-        return relativePath;
+    public Long getSort() {
+        return sort;
     }
 
-    public void setRelativePath(String relativePath) {
-        this.relativePath = relativePath;
+    public void setSort(Long sort) {
+        this.sort = sort;
     }
 
     @Override

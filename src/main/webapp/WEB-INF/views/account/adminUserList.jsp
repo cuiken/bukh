@@ -6,20 +6,37 @@
 <html>
 <head>
 	<title>用户管理</title>
+    <script>
+        $(document).ready(function() {
+            $("#account-tab").addClass("active");
+        });
+    </script>
 </head>
 
 <body>
+    <h1>帐号管理</h1>
 	<c:if test="${not empty message}">
 		<div id="message" class="alert alert-success"><button data-dismiss="alert" class="close">×</button>${message}</div>
 	</c:if>
 	
 	<table id="contentTable" class="table table-striped table-bordered table-condensed">
-		<thead><tr><th>登录名</th><th>用户名</th><th>注册时间<th>管理</th></tr></thead>
+        <thead>
+        <tr>
+            <th>登录名</th>
+            <th>姓名</th>
+            <th>电邮</th>
+            <th>状态</th>
+            <th></th>
+            <th>操作</th>
+        </tr>
+        </thead>
 		<tbody>
 		<c:forEach items="${users}" var="user">
 			<tr>
 				<td><a href="${ctx}/admin/user/update/${user.id}">${user.loginName}</a></td>
 				<td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>${allStatus[user.status]}</td>
 				<td>
 					<fmt:formatDate value="${user.registerDate}" pattern="yyyy年MM月dd日  HH时mm分ss秒" />
 				</td>
