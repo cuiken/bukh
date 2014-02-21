@@ -9,6 +9,7 @@
     <script>
         $(document).ready(function() {
             $("#account-tab").addClass("active");
+            $("#account-tab a").append("<i class='icon-remove-circle'></i>");
         });
     </script>
 </head>
@@ -19,7 +20,7 @@
 		<div id="message" class="alert alert-success"><button data-dismiss="alert" class="close">×</button>${message}</div>
 	</c:if>
 	
-	<table id="contentTable" class="table table-striped table-bordered table-condensed">
+	<table id="contentTable" class="table table-bordered table-hover">
         <thead>
         <tr>
             <th>登录名</th>

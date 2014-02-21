@@ -14,6 +14,7 @@
 
 <link type="image/x-icon" href="${ctx}/static/images/favicon.ico" rel="shortcut icon">
 <link href="${ctx}/static/bootstrap/2.3.2/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="${ctx}/static/bootstrap/2.3.2/css/bootstrap-responsive.min.css" type="text/css" rel="stylesheet" />
 <link href="${ctx}/static/styles/default.min.css" type="text/css" rel="stylesheet" />
 <script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
 
@@ -22,11 +23,11 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<%@ include file="/WEB-INF/layouts/header.jsp"%>
-		<div class="row">
+        <div class="row-fluid" style="margin-top: 10px;">
 			<%@ include file="/WEB-INF/layouts/left.jsp"%>
-			<div id="main" class="span10">
+			<div id="main" class="span9">
 				<sitemesh:body />
 			</div>
 		</div>

@@ -9,3 +9,12 @@ create table ss_user(
  register_date timestamp not null default 0,
  primary key (id)
 )ENGINE=InnoDB;
+
+create table tt_category(
+  id bigint not null auto_increment,
+  name varchar(35),
+  code varchar(35),
+  sort int,
+  status varchar(32) ,
+  primary key (id)
+)ENGINE=InnoDB;

@@ -2,13 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <c:set var="ctx" value="${pageContext.request.contextPath}"/>
-<div id="leftbar" class="span2">
-	<h1>权限模块</h1>
-	<div class="submenu">
-		<a id="account-tab"href="${ctx}/admin/user/">帐号管理</a>
-	</div>
-	<h1>内容模块</h1>
-	<div class="submenu">
-		<a id="web-tab" href="${ctx}/story/web">轮播图片管理</a>
-	</div>
+<div id="leftbar" class="well span3" style="padding: 8px 0;margin-top: 15px;">
+    <ul class="nav nav-list">
+        <li class="nav-header"><i class="icon-cog"></i>系统管理</li>
+        <li id="account-tab"><a href="${ctx}/admin/user/">帐号管理</a></li>
+
+        <li class="nav-header"><i class="icon-book"></i>内容管理</li>
+
+        <li id="pic-tab"><a href="#">轮播图片管理</a></li>
+        <li id="category-tab"><a href="${ctx}/content/category">商品分类管理</a></li>
+    </ul>
 </div>

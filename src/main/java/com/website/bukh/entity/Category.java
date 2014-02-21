@@ -2,9 +2,14 @@ package com.website.bukh.entity;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by ken.cui on 14-2-16.
  */
+@Entity
+@Table(name = "tt_category")
 public class Category extends IdEntity {
     private String name;
     private String code;

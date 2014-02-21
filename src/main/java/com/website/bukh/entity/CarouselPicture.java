@@ -8,7 +8,7 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
  */
 public class CarouselPicture extends IdEntity {
 
-
+    private String type;
     private String smallSize;
     private String largeSize;
     private Long sort;

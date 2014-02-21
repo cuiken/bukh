@@ -1,9 +1,30 @@
-<%@ page language="java" pageEncoding="UTF-8" %>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
-<div id="header" class="row">
-	<div><h1>BUKH<small>--管理后台</small></h1></div>
-	<div class="pull-right">
-		<shiro:guest><a href="${ctx}/login">登录</a></shiro:guest>
-		<shiro:user>你好, <shiro:principal property="name"/> <a href="${ctx}/logout">退出登录</a></shiro:user>
-	</div>
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<div id="header" class="row" style="margin-top: 35px;">
+    <div class="navbar navbar-fixed-top navbar-inverse" style="opacity:0.9">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse"
+                   data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span>
+                </a> <a class="brand" href="${ctx}"><i class="icon-cloud-upload"></i>&nbsp;BUKH</a>
+                <div class="nav-collapse collapse ">
+                    <shiro:user>
+                        <ul class="nav pull-right">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="icon-user icon-white"></i> <shiro:principal property="name" />
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="${ctx}/logout">Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </shiro:user>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
