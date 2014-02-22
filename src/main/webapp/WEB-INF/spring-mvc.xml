@@ -13,7 +13,7 @@
         <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
     </context:component-scan>
 
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
 
     <!-- 定义JSP文件的位置 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -28,10 +28,28 @@
         <property name="uploadTempDir" value="user_dir"></property>
     </bean>
 
+    <!--国际化-->
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="message"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+    </bean>
+
+    <!-- 配置基于Session的处理,将提交上来的locale参数进行处理 -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="zh"></property>
+    </bean>
+
+    <!-- 国际化请求拦截器处理 -->
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />
+    </mvc:interceptors>
+
     <!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL-->
     <mvc:default-servlet-handler/>
 
-    <mvc:view-controller path="/" view-name="index" />
+    <mvc:view-controller path="/" view-name="index"/>
 
     <!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL-->
     <mvc:default-servlet-handler/>

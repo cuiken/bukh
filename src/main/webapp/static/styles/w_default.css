@@ -1,0 +1,629 @@
+
+* { padding: 0; margin: 0; }
+html {
+	font-size: 62.5%;
+}
+body {
+	font: 14px/20px Arial, sans-serif;
+	color:#323232; 
+	background: #fafafa url("../images/background.png") repeat-x center 54px;
+}
+a, a:link, a:visited, a:active {
+	color: #00A1DE; 
+	text-decoration: none;	
+}
+a:hover {
+	color: #A71930;
+	text-decoration: none;
+}
+
+h1 {
+	
+	color:#A71930; 
+	font-size: 36px;
+	margin:0 0 10px 0;
+	margin: 0px 0px 5px 0px;
+	font-weight: bold;
+
+}
+
+h2 {
+
+	font-size: 	20px;
+	color: #323232;
+	margin: 0px 0px 6px 0px;
+	font-weight: bold;
+	
+}
+
+h3 {
+
+	
+	font-size: 16px;
+	margin: 0px 0px 10px 0px;
+
+}
+
+h4 {
+	font-weight: bold;
+	color: #000000;
+}
+
+h5 {
+
+}
+
+h6 {
+
+}
+
+hr {
+	color: #eeeeee;
+	background: #eeeeee;
+	border: 0;
+	height: 1px;
+	margin: 5px 0px 5px 0px;
+}
+
+.usermenu {
+
+}
+
+.usermenu ul { list-style: none; margin: 0 10px 0 0; padding: 0; float: right; }
+.usermenu li { float: left; margin: 0 10px 0 0; font-size: 11px;}
+.usermenu a { color: #666; }
+.usermenu .liUserAddB2C,
+.usermenu .liUserAddB2B,
+.usermenu .liMyOrders,
+.usermenu .liSendPass,
+.usermenu .liUpdatePass,
+.usermenu .liUserUpdate { display: none; }
+.usermenu a:hover,
+.usermenu a.active
+ { color: #A71930; }
+
+#Wrapper {	
+	margin:10px auto 10px auto;
+	width: 1002px;
+}
+img {
+	border: none;
+}
+#Top {
+	width: 960px;
+	margin:0px auto;
+	background:none;
+	height:95px;
+}
+	#Logo {		
+		float:left;
+		margin: 0px 0px 0px 19px;
+	}
+	#QuickNavigation {
+		float:right;
+		width: 700px;
+		line-height: 44px;
+		height: 44px;
+	}
+	#QuickLinks {
+		float:right;
+		margin:0 15px 0 0px;
+	}
+		#QuickLinks a {
+			text-decoration: none;
+			color:#999;
+		}
+	#Language {
+		float:right;
+	}
+	#QuickSearch {
+		float: right;
+	}
+#InnerWrapper {
+	width:964px;
+	margin: 0 auto;
+}
+#Header {
+	width:1002px;
+	float:left;
+	margin: 0px 0px 16px 0px;
+	position: relative;
+}
+#Navigation {
+	height:35px;
+	float:right;
+}
+	#Navigation ul {
+		height:35px;
+	}
+	#Navigation ul li {
+		float:left;
+		list-style-type: none;
+		background: none;
+	}	
+	#Navigation ul li a {
+		font: normal normal	normal 13px/32px Arial, sans-serif;
+		color:#fff;
+		text-decoration: none;
+		float: none !important; 
+		float: left; 
+		padding:0 0px 0 0px;
+		display:block;
+		background:none;
+		text-transform: uppercase;
+	}
+	#Navigation ul li a span {
+		display: block;
+		background: url("../images/nav-spacer.png") no-repeat top right;
+		padding:0 15px 0 15px;
+	}
+	#Navigation ul li a:hover,
+	#Navigation ul li a.active  {
+		background: url("../images/nav-hover-left.png") no-repeat top left;
+	}
+	#Navigation ul li a:hover span,
+	#Navigation ul li a.active span {
+		background: url("../images/nav-hover-right.png") no-repeat top right;
+	}
+	
+#BreadCrumb {
+	margin: 0 0 10px 20px;
+}
+	#BreadCrumb span {
+		display: none;
+	}
+#ContentWrapper {
+	margin:0 auto;
+	width:974px;
+	float:left;
+	position: relative;
+}
+
+#ContentTop {
+	float: left;
+	height:11px;
+	width: 964px;
+	background: url("/upload_dir/themes/web/BUKH/graphics/content_top.png") no-repeat top left;
+}
+#Content {	
+	float:left;
+	margin:0 auto;
+	padding:0px 2px 10px 2px;
+	background: url("/upload_dir/themes/web/BUKH/graphics/content_background.png") repeat-y top left;
+}
+	
+	#Content #MainContentFrontpage {
+		background: url("/upload_dir/themes/web/BUKH/graphics/bukh_frontpage_bg.png") repeat-y top left;
+	}
+	#WorldMap {
+		border-bottom: 1px solid #f3f3f3;
+		padding: 0px 0px 10px 0px;
+	}
+	#WorldChooser {
+		background: #f3f3f3;
+		border-top: solid 1px #FFFFFF;
+		border-bottom: solid 1px #FFFFFF;
+		padding: 10px 10px 10px 10px;
+	}
+	#WorldDestributers ul {
+		border-top: 1px solid #f3f3f3;
+		list-style: none;
+		margin: 0px 0px 0px 0px;
+		padding: 10px 0px 0px 0px;
+	}
+		#WorldDestributers span {
+			font-size: 14px;
+			font-weight: bold;
+		}
+		#WorldDestributers p {
+			font-size: 12px;
+			color: #3d3d3d;
+			line-height: 16px;
+		}
+		#WorldDestributers span.country {
+			font-size: 12px;
+			font-weight: bold;
+		}
+		.distributor-row-one {
+			border-bottom: 1px solid #f3f3f3;
+			border-top: 1px solid #f3f3f3;
+			padding: 10px 10px 10px 10px;
+		}
+		.distributor-row-two {
+			border-bottom: 1px solid #FFFFFF;
+			border-top: 1px solid #FFFFFF;
+			padding: 10px 10px 10px 10px;
+		}
+#ContentBottom {
+	float: left;
+	height:32px;
+	width: 964px;
+	background: url("/upload_dir/themes/web/BUKH/graphics/content_bottom.png") no-repeat top left;
+}
+.bodyPageId1 #ContentTop,
+.bodyPageId1 #Content,
+.bodyPageId1 #ContentBottom {
+	background: none;
+}
+.bodyPageId1 #ContentTop,
+.bodyPageId1 #ContentBottom {
+	display: none;
+}
+.bodyPageId1 #InnerWrapper {
+	width: 988px;
+	float: left;
+	margin: 0px 0px 0px 14px
+}
+.bodyPageId1 #MainContent div div.images a {
+	display: block;
+	float: left;
+	height: 147px;
+}
+
+	#LeftColumn,
+	#RightColumn {
+		width:240px;
+		min-height:400px;
+	  	height:auto !important;
+	  	height:300px;
+		float:left;	
+		display:inline;
+		margin:0 0px 0 0;
+		padding: 0px 0px 0px 0px;
+		background: url("/upload_dir/themes/web/BUKH/graphics/left-collumn_background.png") no-repeat top right;
+	}	
+	#RightColumn {		
+		float:right;	
+		margin:0 0 0 0px;
+		font: 11px/24px Arial,sans-serif;
+		background: none;
+	}
+	#RightColumnWrapper {
+		width:240px;
+		min-height:400px;
+	  	height:auto !important;
+	  	height:300px;
+		padding: 0px 0px 0px 0px;
+		margin:0 0px 0 0;
+		float: right;
+		display:inline;
+		background: url("/upload_dir/themes/web/BUKH/graphics/right-collumn_background.png") no-repeat top left;
+	}
+		.pagecontent-box {
+			width: 200px;
+		}
+	#Navigation_2nd {
+		width:220px;
+		margin:0 0 20px 10px;
+	}
+		#Navigation_2nd li {
+			list-style-type: none;
+			margin:0 0 0px 0;
+			background: url("/upload_dir/themes/web/BUKH/graphics/2nd-nav-spacer.gif") no-repeat left bottom;
+		}
+		#Navigation_2nd li a {
+			display:block;
+			padding:0 3px 0 10px;
+			color: #666;
+			font: 13px/24px Arial, sans-serif;
+			text-decoration: none;
+		}
+		#Navigation_2nd li ul {
+			margin: 1px 0px 0px 0px;
+		}
+		#Navigation_2nd li a:hover,
+		#Navigation_2nd li a.active {
+			background: url("/upload_dir/themes/web/BUKH/graphics/2nd-nav-hover.png") no-repeat center left;
+			color: #FFFFFF;
+		}
+		
+		#Navigation_2nd li li a {
+			display:block;
+			color: #666;
+			font: 13px/24px Arial, sans-serif;
+			text-decoration: none;
+			padding:0 3px 0 30px;
+			margin:0 0 0px 0;
+		}	
+		#Navigation_2nd li li a:hover,		
+		#Navigation_2nd li li a.active {
+			color: #BC0000; 
+		}
+		
+		#Navigation_2nd li.active {
+			background: url("/upload_dir/themes/web/BUKH/graphics/2nd-nav-spacer.gif") no-repeat left 22px !important;
+		}
+			
+			#Navigation_2nd li.active li a span{
+				color: #666666;
+			}
+			#Navigation_2nd li.active a span,
+			#Navigation_2nd li li.active a span,
+			#Navigation_2nd li li li.active a span {
+				color: #AA082A;
+			}
+			#Navigation_2nd li a:hover span,
+			#Navigation_2nd li li a:hover span,
+			#Navigation_2nd li li li a:hover span
+			{
+				color: #FFFFFF;
+			}
+	
+	/* =================== MODULE.BOXES ======================*/
+	#search-box,
+	#newslettersubscribe-box,
+	#blog-box,
+	#quicklogin-box,
+	#pagenews-box,
+	#calendar-box {
+		margin:0 0 10px 0;
+		width:180px;
+		float:left;
+	}
+	#search-box-top,
+	#newslettersubscribe-box-top,
+	#blog-box-top,
+	#quicklogin-box-top,
+	#pagenews-box-top,
+	#calendar-box-top,
+    #vatselect-box-top,
+    #facebook-box-top,
+    #twitter-box-top,
+    #google-box-top {
+		width:180px;
+		float:left;		
+		height:25px;
+		border-bottom:2px solid #248e1f;
+	}
+	#search-box h2,
+	#newslettersubscribe-box h2,
+	#blog-box h2,
+	#quicklogin-box h2,
+	#pagenews-box h2,
+	#calendar-box h2,
+    #vatselect-box h2,
+    #facebook-box h2,
+    #twitter-box h2,
+    #google-box h2 {
+		font-size: 13px;
+		color:#666;	
+		font-weight: normal;	
+		padding:0 0 0 10px;	
+		line-height:25px;	
+	}	
+	#search-box em,
+	#newslettersubscribe-box em,
+	#blog-box em,
+	#quicklogin-box em,
+	#pagenews-box em,
+	#calendar-box em,
+    #vatselect-box em,
+    #facebook-box em,
+    #twitter-box em,
+    #google-box em {
+		color:#666;
+		font-weight: bold;
+		font-style: normal;
+	}	
+	#search-box-content,
+	#newslettersubscribe-box-content,
+	#blog-box-content,
+	#quicklogin-box-content,
+	#pagenews-box-content,
+	#calendar-box-content,
+    #vatselect-box-content,
+    #facebook-box-content,
+    #twitter-box-content,
+    #google-box-content {
+		float:left;
+		width:170px;
+		padding:10px 5px 5px 5px;
+		min-height:50px;
+	  	height:auto !important;
+	  	height:50px;
+	}
+	#search-box-bottom,
+	#newslettersubscribe-box-bottom,
+	#blog-box-bottom,
+	#quicklogin-box-bottom,
+	#pagenews-box-bottom,
+	#calendar-box-bottom,
+    #vatselect-box-bottom,
+    #facebook-box-bottom,
+    #twitter-box-bottom,
+    #google-box-bottom {
+		
+	}
+	#MainContentWrapper,
+	#MainContentTop,
+	#MainContentBottom {
+		float:left;		
+		display:inline;
+		width:780px;
+	}
+	#MainContentWrapper {
+		padding: 11px 20px;
+	}
+	#DestributersMainContent {
+	  	height:auto !important;
+	  	height:300px;
+		float:left;		
+		display:inline;
+		width:680px;
+		padding: 0px 0px 0px 0px;
+	}	
+		
+		.bodyPageId1 #MainContentWrapper {
+			width: 970px;
+		}
+		.FrontpageTeaserContent {
+			background: url("/upload_dir/pics/forside/bukh_frontpage_content.png") repeat-y top left;
+			float: left;
+		}
+	.bodyPageId1 #MainContent {
+		padding: 0px 0px 0px 0px;
+		width: 970px;
+	}
+	#MainContent {
+	  	height:auto !important;
+	  	height:300px;
+		float:left;		
+		display:inline;
+		width:780px;
+		padding: 0px 0px;
+		color: #666666;
+	}
+		#MainContent h1{
+			
+		}
+		.bodyPageId1 #MainContent a {
+			color: #3D3D3D; 
+		}
+		.bodyPageId1 #MainContent a:hover {
+			color: #00A1DE;
+		}
+		#MainContent table {
+			border: 0px none;
+			border-spacing: 0px !important;
+		}
+		#MainContent tr {
+			background: none;
+		}
+		#MainContent tr.unevenRow {
+			background: #dde9eb;
+		}
+		#MainContent td {
+			padding: 5px 5px 5px 5px;
+		}
+		#MainContent td.content {
+			padding: 0px 0px 0px 0px;
+		}
+		#MainContent td.content td {
+			padding: 0px 0px 0px 0px;
+		}
+#Footer {
+	clear:both;
+	width: 100%;
+	margin:0px auto;
+	height:80px;
+	line-height: 30px;
+	/*background: url("/upload_dir/themes/web/BUKH/graphics/footer-bg.png") repeat-x;*/
+}
+#FooterContact {
+	width: 960px;
+	position: relative;
+	margin: 0 auto;
+}
+#Footer ul {
+	float: left;
+	margin: 0px 0px 0px 0px;
+	width: 740px;
+}
+#Footer ul,#Footer ul a {
+	color:#999;
+	font-size: 11px;
+}
+	#ContactData li {
+		padding: 0px 10px;
+	}
+	#FooterDeveloper {
+		float: left;
+		width: 500px;
+		line-height: 14px;
+		text-align: left;
+		margin: 10px 0px 0px 10px;
+	}
+	#FooterDeveloper span {
+		color: #b5b5b5;
+		font-size: 10px;
+	}
+	#FooterMap {
+		background: url("/upload_dir/themes/web/BUKH/graphics/footer-map.png") no-repeat top right;
+		height: 50px;
+    	width: 220px;
+    	float: right;
+    	margin: 5px 0px 0px 0px;
+	}
+	.InfoDeveloper {
+		color: #b5b5b5;
+		font-size: 10px;
+	}
+.search-button {
+	padding: 4px 0px 0px 0px;
+}
+#QuickSearch {
+	line-height: 34px;
+	padding: 0px 10px 0px 10px;
+}
+#Language {
+	line-height: 40px;
+}
+#QuickLinks {
+	line-height: 40px;
+}
+
+/* pagecontent-box */
+
+.pagecontent-box {
+	padding: 0px 20px;
+
+}
+
+/* PICTURE ELEMENT */
+.rounded-corner {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 90;
+}
+#PictureElement {
+	position: absolute;
+	top: 1px;
+	right: 12px;
+	z-index: 50;
+}
+.PESlider {
+	margin: 0px 0px 0px 0px;
+	z-index: 30;
+}
+	
+	#SliderArrowNext {
+	
+		position: absolute;
+		right: 0px;
+		z-index: 200;
+		top: 150px;
+	
+	}
+	
+	#SliderArrowPrev {
+	
+		position: absolute;
+		left: 0px;		
+		z-index: 200;
+		top: 150px;
+	
+	}
+	
+	#SliderPagination {
+		position: absolute;
+		z-index: 300;
+		top: 6px;
+		right: 31px;
+		height: 15px;
+	}
+	
+		#SliderPagination a {
+			height: 16px;
+			width: 12px;
+			float:left;
+			display: block;
+			background: url("/upload_dir/themes/web/BUKH/graphics/pagination.png") no-repeat center 5px;
+			font-size: 0%;
+			text-indent: -9999;
+		}
+		
+		#SliderPagination a.activeSlide {
+			background: url("/upload_dir/themes/web/BUKH/graphics/pagination.png") no-repeat center -16px;
+		}
+.theme-default .nivoSlider { box-shadow: none !important; }
