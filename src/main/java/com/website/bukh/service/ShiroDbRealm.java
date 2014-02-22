@@ -32,6 +32,9 @@ public class ShiroDbRealm extends AuthorizingRealm {
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
         User user = accountService.findUserByLoginName(token.getUsername());
         if (user != null) {
+            if (user.getStatus().equals("disabled")) {
+                throw new DisabledAccountException();
+            }
             byte[] salt = Encodes.decodeHex(user.getSalt());
             return new SimpleAuthenticationInfo(new ShiroUser(user.getId(), user.getLoginName(), user.getName()),
                     user.getPassword(), ByteSource.Util.bytes(salt), getName());
