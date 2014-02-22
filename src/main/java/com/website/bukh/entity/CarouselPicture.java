@@ -2,40 +2,26 @@ package com.website.bukh.entity;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
- * 轮播图片
+ * 首页轮播图片
  * Created by ken.cui on 14-2-16.
  */
+@Entity
+@Table(name = "tt_carousel_pic")
 public class CarouselPicture extends IdEntity {
 
-    private String type;
-    private String smallSize;
-    private String largeSize;
+    private String dirPath;
     private Long sort;
-    private Long position;
 
-    public Long getPosition() {
-        return position;
+    public String getDirPath() {
+        return dirPath;
     }
 
-    public void setPosition(Long position) {
-        this.position = position;
-    }
-
-    public String getSmallSize() {
-        return smallSize;
-    }
-
-    public void setSmallSize(String smallSize) {
-        this.smallSize = smallSize;
-    }
-
-    public String getLargeSize() {
-        return largeSize;
-    }
-
-    public void setLargeSize(String largeSize) {
-        this.largeSize = largeSize;
+    public void setDirPath(String dirPath) {
+        this.dirPath = dirPath;
     }
 
     public Long getSort() {

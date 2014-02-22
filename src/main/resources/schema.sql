@@ -18,3 +18,20 @@ create table tt_category(
   status varchar(32) ,
   primary key (id)
 )ENGINE=InnoDB;
+
+create table tt_side_pic(
+  id bigint not null auto_increment,
+  name varchar(35),
+  dir_path varchar (100),
+  link varchar (100),
+  description varchar (100),
+  sort int,
+  primary  key (id)
+)ENGINE=InnoDB;
+
+create table tt_carousel_pic(
+  id bigint not null auto_increment,
+  dir_path varchar (100),
+  sort int ,
+  primary key(id)
+)ENGINE=InnoDB;
