@@ -59,6 +59,8 @@
 	
 	<script>
 		$(document).ready(function() {
+            $("#account-tab").addClass("active");
+            $("#account-tab a").append("<i class='icon-remove-circle'></i>");
 			//聚焦第一个输入框
 			$("#name").focus();
 			//为inputForm注册validate函数

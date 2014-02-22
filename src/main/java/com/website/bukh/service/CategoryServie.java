@@ -33,4 +33,8 @@ public class CategoryServie {
     public Category getOne(Long id) {
         return categoryDao.get(id);
     }
+
+    public Category findCategoryByName(String name) {
+        return categoryDao.findUniqueBy("name", name);
+    }
 }

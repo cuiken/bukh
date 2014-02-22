@@ -21,11 +21,7 @@
         <button data-dismiss="alert" class="close">×</button>
             ${message}</div>
 </c:if>
-<div class="pull-right">
 
-    <a class="icon-plus" href="user!input.action">新增</a>
-
-</div>
 <table id="contentTable" class="table table-bordered table-hover">
     <thead>
     <tr>
@@ -45,5 +41,6 @@
     </c:forEach>
     </tbody>
 </table>
+<div><a class="btn" href="${ctx}/content/category/create">创建分类</a></div>
 </body>
 </html>
