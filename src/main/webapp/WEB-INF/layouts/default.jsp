@@ -21,6 +21,10 @@
     <script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
     <script src="${ctx}/static/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>
 
+    <link rel="stylesheet" href="${ctx}/static/editor/themes/default/default.css" />
+    <script charset="utf-8" src="${ctx}/static/editor/kindeditor-min.js"></script>
+    <script charset="utf-8" src="${ctx}/static/editor/lang/zh_CN.js"></script>
+
     <sitemesh:head/>
 
 </head>

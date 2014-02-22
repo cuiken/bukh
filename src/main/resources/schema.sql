@@ -35,3 +35,25 @@ create table tt_carousel_pic(
   sort int ,
   primary key(id)
 )ENGINE=InnoDB;
+
+create table tt_item(
+  id bigint not null auto_increment,
+  name varchar (35),
+  title varchar (200),
+  short_title varchar (100),
+  content text,
+  product_brochure varchar (100),
+  technial_drawing varchar (100),
+  torque_curves varchar (100),
+  category_id int,
+  primary key (id)
+)ENGINE=InnoDB;
+
+create table tt_item_carousel(
+  id bigint not null auto_increment,
+  item_id int,
+  small_size_path varchar (100),
+  large_size_path varchar (100),
+  status varchar (1),
+  primary key (id)
+)ENGINE=InnoDB;

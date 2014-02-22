@@ -23,7 +23,7 @@ import java.io.IOException;
 @RequestMapping(value = "/admin/carousel")
 public class CarouselController {
 
-    private static final String CAROUSEL_PIC_DIR = "carousel_pic";
+    private static final String CAROUSEL_PIC_DIR = Constants.PIC_DIR + File.separator + "carousel_pic";
 
     @Autowired
     private CarouselPicService carouselPicService;
