@@ -10,7 +10,7 @@
 </head>
 
 <body>
-<form id="inputForm" action="${ctx}/content/category/${action}" method="post" class="form-horizontal">
+<form id="inputForm" action="${ctx}/admin/category/${action}" method="post" class="form-horizontal">
     <input type="hidden" name="id" value="${category.id}"/>
     <fieldset>
         <legend><small>分类管理</small></legend>
@@ -37,7 +37,7 @@
         $("#inputForm").validate({
             rules: {
                 name: {
-                    remote: "${ctx}/content/category/checkName"
+                    remote: "${ctx}/admin/category/checkName"
                 }
             },
             messages: {

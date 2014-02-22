@@ -14,7 +14,7 @@ import java.util.List;
  * Created by ken.cui on 14-2-20.
  */
 @Controller
-@RequestMapping(value = "/content/category")
+@RequestMapping(value = "/admin/category")
 public class CategoryController {
 
     @Autowired
@@ -40,7 +40,7 @@ public class CategoryController {
 
         categoryServie.saveCategory(category);
         redirectAttributes.addFlashAttribute("message", "新增分类[" + category.getName() + "]成功");
-        return "redirect:/content/category";
+        return "redirect:/admin/category";
     }
 
     @RequestMapping(value = "update/{id}", method = RequestMethod.GET)
@@ -55,7 +55,7 @@ public class CategoryController {
 
         categoryServie.saveCategory(category);
         redirectAttributes.addFlashAttribute("message", "更新分类[" + category.getName() + "]成功");
-        return "redirect:/content/category";
+        return "redirect:/admin/category";
     }
 
     @RequestMapping(value = "delete/{id}")
@@ -63,7 +63,7 @@ public class CategoryController {
 
         categoryServie.deleteCategory(id);
         redirectAttributes.addFlashAttribute("message", "删除分类成功");
-        return "redirect:/content/category";
+        return "redirect:/admin/category";
     }
 
     @RequestMapping(value = "checkName")

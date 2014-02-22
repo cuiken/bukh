@@ -9,9 +9,9 @@
 
         <li class="nav-header"><i class="icon-book"></i>内容管理</li>
 
-        <li id="pic-tab"><a href="${ctx}/admin/carousel">首页轮播图片管理</a></li>
-        <li id="sidepic-tab"><a href="${ctx}/admin/side_pic">首页导航图片管理</a></li>
-        <li id="category-tab"><a href="${ctx}/content/category">产品分类管理</a></li>
+        <li id="pic-tab"><a href="${ctx}/admin/carousel">首页轮播图片</a></li>
+        <li id="sidepic-tab"><a href="${ctx}/admin/side_pic">首页导航图片</a></li>
+        <li id="category-tab"><a href="${ctx}/admin/category">产品分类</a></li>
         <li id="item-tab"><a href="${ctx}/admin/item">产品管理</a></li>
     </ul>
 </div>

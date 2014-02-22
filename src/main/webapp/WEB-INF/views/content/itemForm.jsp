@@ -39,6 +39,12 @@
             </div>
         </div>
         <div class="control-group">
+            <label for="item_content" class="control-label">产品描述:</label>
+            <div class="controls">
+                <textarea id="item_content" name="content" style="width:700px;height:400px;visibility:hidden;">${item.content}</textarea>
+            </div>
+        </div>
+        <div class="control-group">
             <label class="control-label">产品手册:</label>
             <div class="controls">
                 <input type="file" name="files">
@@ -60,12 +66,6 @@
             <label class="control-label">图片:</label>
             <div class="controls">
                 <input type="file" name="files">
-            </div>
-        </div>
-        <div class="control-group">
-            <label for="item_content" class="control-label">产品描述:</label>
-            <div class="controls">
-               <textarea id="item_content" name="content" style="width:700px;height:400px;visibility:hidden;">${item.content}</textarea>
             </div>
         </div>
 

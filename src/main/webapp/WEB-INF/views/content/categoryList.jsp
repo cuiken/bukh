@@ -33,14 +33,14 @@
     <tbody>
     <c:forEach items="${categories}" var="category">
         <tr>
-            <td><a href="${ctx}/content/category/update/${category.id}">${category.name}</a></td>
+            <td><a href="${ctx}/admin/category/update/${category.id}">${category.name}</a></td>
             <td>${category.code}</td>
 
-            <td><a href="${ctx}/content/category/delete/${category.id}">删除</a></td>
+            <td><a href="${ctx}/admin/category/delete/${category.id}">删除</a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<div><a class="btn" href="${ctx}/content/category/create">创建分类</a></div>
+<div><a class="btn" href="${ctx}/admin/category/create">创建分类</a></div>
 </body>
 </html>
