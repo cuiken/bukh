@@ -1,0 +1,73 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	font: 11px Verdana, sans-serif;
+	color:#333;
+	background: none;
+}
+a, a:link, a:visited, a:active {
+	color:#333;
+	text-decoration: underline;
+}
+a:hover {
+	text-decoration: none;
+	color:#333;
+}
+#Bg,
+#Top,
+#Header,
+#Navigation,
+#QuickLinks,
+#LeftColumn,
+#HeaderContent,
+#ContentTop,
+#ContentBottom,
+#MainContentTop,
+#MainContentTop_OneColumn,
+#MainContentTop_TwoColumn,
+#MainContentTop_ThreeColumn,
+#MainContentBottom,
+#MainContentBottom_OneColumn,
+#MainContentBottom_TwoColumn,
+#MainContentBottom_ThreeColumn,
+#MainContentHeader,
+#RightColumn,
+#Splitter,
+#Footer,
+#Demo,
+#Logo,
+#HeaderWrapper {
+	display:none !important;
+}
+#Wrapper,
+#InnerWrapper,
+#ContentWrapper,
+#Content,
+#MainContent {
+	width:600px;
+	margin:0;
+	padding:0;
+	background:none;
+	border:none;
+	float:left;
+}
+#MainContent {
+	margin:15px;
+}
+#MainContent h1 {
+	color:#333;
+	margin:0;
+	padding:0;
+	margin-bottom:10px;
+	background:none !important;
+}
+#MainContent a,
+#MainContent ul li a,
+#MainContent ul li li a {
+	color:#333;
+}

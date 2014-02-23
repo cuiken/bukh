@@ -1621,9 +1621,9 @@ textarea {
 	background:#FFFFFF url(/_design/common/img/input/text-bg.gif) repeat-x left top;
 	border:1px solid #ccc;
 }
-input {
-	height:16px;
-}
+/*input {*/
+	/*height:16px;*/
+/*}*/
 option {
 	padding:0 5px 0 0;
 }
