@@ -39,5 +39,11 @@
     </div>
 </div>
 <%@include file="common/footer.jsp"%>
+<script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#nav-profil a").addClass("active");
+    })
+</script>
 </body>
 </html>
