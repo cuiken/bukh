@@ -270,7 +270,7 @@ img {
 		display:inline;
 		margin:0 0px 0 0;
 		padding: 0px 0px 0px 0px;
-		background: url("/upload_dir/themes/web/BUKH/graphics/left-collumn_background.png") no-repeat top right;
+		background: url("../images/left-collumn_background.png") no-repeat top right;
 	}	
 	#RightColumn {		
 		float:right;	
@@ -299,7 +299,7 @@ img {
 		#Navigation_2nd li {
 			list-style-type: none;
 			margin:0 0 0px 0;
-			background: url("/upload_dir/themes/web/BUKH/graphics/2nd-nav-spacer.gif") no-repeat left bottom;
+			background: url("../images/2nd-nav-spacer.gif") no-repeat left bottom;
 		}
 		#Navigation_2nd li a {
 			display:block;
@@ -313,7 +313,7 @@ img {
 		}
 		#Navigation_2nd li a:hover,
 		#Navigation_2nd li a.active {
-			background: url("/upload_dir/themes/web/BUKH/graphics/2nd-nav-hover.png") no-repeat center left;
+			background: url("../images/2nd-nav-hover.png") no-repeat center left;
 			color: #FFFFFF;
 		}
 		
@@ -331,7 +331,7 @@ img {
 		}
 		
 		#Navigation_2nd li.active {
-			background: url("/upload_dir/themes/web/BUKH/graphics/2nd-nav-spacer.gif") no-repeat left 22px !important;
+			background: url("../images/2nd-nav-spacer.gif") no-repeat left 22px !important;
 		}
 			
 			#Navigation_2nd li.active li a span{
