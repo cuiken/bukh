@@ -9,7 +9,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUKH</title>
+    <title>Welcome - BUKH</title>
     <link rel="stylesheet" href="${ctx}/static/styles/w_default.css">
     <link rel="stylesheet" href="${ctx}/static/styles/modules.css">
 
@@ -65,16 +65,17 @@
                 <li id="Li_CatItem1_uk" class="current">
                     <a href="${ctx}" class="active"><span><spring:message code="nav.home"/> </span></a>
                 </li>
-                <li><a href="#"><span><spring:message code="nav.bukh"/> </span></a></li>
-                <li><a href="#"><span><spring:message code="nav.products"/> </a></li>
-                <li><a href="#"><span><spring:message code="nav.callesen_diesel"/> </span></a></li>
-                <li><a href="#"><span><spring:message code="nav.distributors"/> </span></a></li>
-                <li><a href="#"><span><spring:message code="nav.contact"></spring:message> </span></a></li>
+                <li><a href="${ctx}/profil"><span><spring:message code="nav.bukh"/> </span></a></li>
+                <li><a href="${ctx}/products"><span><spring:message code="nav.products"/> </a></li>
+                <li><a href="${ctx}/callesen-diesel"><span><spring:message code="nav.callesen_diesel"/> </span></a></li>
+                <li><a href="${ctx}/distributors"><span><spring:message code="nav.distributors"/> </span></a></li>
+                <li><a href="${ctx}/contact"><span><spring:message code="nav.contact"></spring:message> </span></a></li>
             </ul>
         </div>
     </div>
     <div id="Header">
-        <img src="${ctx}/static/images/corner-pe.png" class="rounded-corner" />
+        <img src="${ctx}/static/images/corner-pe.png" class="rounded-corner"/>
+
         <div class="slider-wrapper theme-default">
             <div id="peSlider283" class="PESlider nivoSlider pager">
                 <c:forEach items="${carousels}" var="carousel">
@@ -93,32 +94,35 @@
                 <div id="MainContent">
                     <div>
                         <div>
-                            <a href=""><img src="static/images/bukh_motorer_t1.png" alt=""></a>
-                            <a href=""><img src="static/images/callesen_diesel_motorer.png" alt=""></a>
-                            <a href=""><img src="static/images/din_naermeste_forhandler.png" alt=""></a>
-                            <a href=""><img src="static/images/bukh_kontakt.png" alt=""></a>
+                            <c:forEach items="${sidePics}" var="sidePic">
+                                <a href="${sidePic.link}"><img src="${ctx}/${sidePic.dirPath}"></a>
+                            </c:forEach>
                         </div>
                         <div class="FrontpageTeaserContent">
-                            <div>
+                            <div style="width: 226px; padding: 0px 10px; float: left;">
                                 <h2>BUKH</h2>
 
-                                <p></p>
+                                <p>ddddd</p>
                             </div>
-                            <div>
+                            <div style="width: 226px; padding: 0px 10px; float: left;">
                                 <h2>Callesen </h2>
 
-                                <p></p>
+                                <p>ddd</p>
                             </div>
-                            <div>
-                                <h2></h2>
+                            <div style="width: 226px; padding: 0px 10px; float: left;">
+                                <h2>dfdfdfd</h2>
 
-                                <p></p>
+                                <p>fdd</p>
                             </div>
-                            <div>
-                                <h2></h2>
+                            <div style="width: 226px; padding: 0px 10px; float: left;">
+                                <h2>fdfd</h2>
 
-                                <p></p>
+                                <p>fdfdfd</p>
                             </div>
+                        </div>
+                        <div>
+                            <img src="${ctx}/static/images/bukh_frontpage_bottom.png"
+                                 style="width: 970px; height: 24px; border-width: 0pt; border-style: solid;"/>
                         </div>
                     </div>
                 </div>
@@ -129,7 +133,28 @@
         <div stype="clear:both;"></div>
     </div>
 </div>
-
+<div id="Footer">
+    <div id="FooterContact">
+        <ul id="ContactData">
+            <li class="ContactDataName"><span><a href="http://www.bukh.dk" title="BUKH A/S">BUKH A/S</a></span></li>
+            <li class="ContactDataAdress firstadress"><span>Aabenraavej 13-17<span
+                    class="comma-seperator">,</span></span></li>
+            <li class="ContactDataZipCode"><span>DK-6340</span></li>
+            <li class="ContactDataCity"><span>Krusaa,</span></li>
+            <li class="ContactDataCountry lastadress"><span>Danmark</span></li>
+            <li class="ContactDataPhone"><span>Telephone: +45 74 62 20 88</span></li>
+            <li class="ContactDataFax"><span>Fax: +45 74 62 74 07</span></li>
+            <li class="ContactDataMail last"><span>E-mail: <a href="mailto:bukh@bukh.dk">bukh@bukh.dk</a></span></li>
+        </ul>
+        <div id="FooterMap">
+            <a style="width: 100%; height: 100%; display: block;" href="http://www.bukh.dk/distributors">&nbsp;</a>
+        </div>
+        <div id="FooterDeveloper">
+            <span>&copy; BUKH A/S 2014. All rights reserved.</span><br/>
+            <span class="InfoDeveloper">Site by Mygind & Co.</span>
+        </div>
+    </div>
+</div>
 
 </body>
 
