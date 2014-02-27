@@ -1,7 +1,7 @@
 package com.website.bukh.web;
 
 import com.website.bukh.entity.Item;
-import com.website.bukh.service.CategoryServie;
+import com.website.bukh.service.CategoryService;
 import com.website.bukh.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.List;
-
 /**
  * Created by ken.cui on 14-2-22.
  */
@@ -24,7 +22,7 @@ public class ItemController {
     @Autowired
     private ItemService itemService;
     @Autowired
-    private CategoryServie categoryServie;
+    private CategoryService categoryService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model) {
@@ -37,7 +35,7 @@ public class ItemController {
     public String createForm(Model model) {
         model.addAttribute("action", "create");
         model.addAttribute("item", new Item());
-        model.addAttribute("categories", categoryServie.list());
+        model.addAttribute("categories", categoryService.list());
         return "content/itemForm";
     }
 
@@ -45,7 +43,7 @@ public class ItemController {
     public String updateForm(@PathVariable("id") Long id, Model model) {
         model.addAttribute("action", "update");
         model.addAttribute("item", itemService.getOne(id));
-        model.addAttribute("categories", categoryServie.list());
+        model.addAttribute("categories", categoryService.list());
         return "content/itemForm";
     }
 

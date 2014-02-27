@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Component
 @Transactional
-public class CategoryServie {
+public class CategoryService {
 
     @Autowired
     private CategoryDao categoryDao;

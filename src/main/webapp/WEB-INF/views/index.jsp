@@ -12,10 +12,14 @@
     <title>Welcome - BUKH</title>
     <link rel="stylesheet" href="${ctx}/static/styles/w_default.css">
     <link rel="stylesheet" href="${ctx}/static/styles/modules.css">
-
+    <link rel="stylesheet" href="${ctx}/static/styles/dynamic_width.css">
     <style>
         .slider-wrapper.theme-default {
             width: 1002px;
+        }
+
+        h2 {
+            color: #A71930;
         }
 
         #MainContent img {
@@ -29,7 +33,7 @@
 </head>
 <body class="bodyPageId1">
 <div id="Wrapper">
-    <%@include file="common/header.jsp"%>
+    <%@include file="common/header.jsp" %>
     <div id="Header">
         <img src="${ctx}/static/images/corner-pe.png" class="rounded-corner"/>
 
@@ -61,17 +65,17 @@
 
                                 <p>ddddd</p>
                             </div>
-                            <div style="width: 226px; padding: 0px 10px; float: left;">
+                            <div style="width: 219px; padding: 0px 10px; float: left;">
                                 <h2>Callesen </h2>
 
                                 <p>ddd</p>
                             </div>
-                            <div style="width: 226px; padding: 0px 10px; float: left;">
+                            <div style="width: 220px; padding: 0px 10px; float: left;">
                                 <h2>dfdfdfd</h2>
 
                                 <p>fdd</p>
                             </div>
-                            <div style="width: 226px; padding: 0px 10px; float: left;">
+                            <div style="width: 225px; padding: 0px 10px; float: left;">
                                 <h2>fdfd</h2>
 
                                 <p>fdfdfd</p>
@@ -90,7 +94,7 @@
         <div stype="clear:both;"></div>
     </div>
 </div>
-<%@include file="common/footer.jsp"%>
+<%@include file="common/footer.jsp" %>
 
 
 <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>

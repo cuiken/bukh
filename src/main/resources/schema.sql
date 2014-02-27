@@ -43,7 +43,7 @@ create table tt_item(
   short_title varchar (100),
   content text,
   product_brochure varchar (100),
-  technial_drawing varchar (100),
+  technical_drawing varchar (100),
   torque_curves varchar (100),
   category_id int,
   primary key (id)

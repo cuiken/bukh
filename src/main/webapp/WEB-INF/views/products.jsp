@@ -35,8 +35,11 @@
                 <div id="LeftColumn">
                     <div id="Navigation_2nd">
                         <ul>
-                            <li><a>BUKH VGT</a></li>
-                            <li><a>BUKH BETA</a></li>
+                            <c:forEach items="${categories}" var="category">
+                                <li>
+                                    <a>${category.name}</a>
+                                </li>
+                            </c:forEach>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +52,7 @@
 
                         <h2>two</h2>
 
-                        <h3>three</h3>
+                        <h3>${product.content}</h3>
                     </div>
                     <div id="MainContentBottom"></div>
                 </div>

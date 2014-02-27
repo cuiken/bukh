@@ -18,7 +18,7 @@ public class Item extends IdEntity {
     private String shortTitle;
     private String content;
     private String productBrochure; //产品手册pdf
-    private String technialDrawing; //技术图纸pdf
+    private String technicalDrawing; //技术图纸pdf
     private String torqueCurves;    //扭矩曲线pdf
     private List<ItemCarousel> carousels = Lists.newArrayList();
 
@@ -64,12 +64,12 @@ public class Item extends IdEntity {
         this.productBrochure = productBrochure;
     }
 
-    public String getTechnialDrawing() {
-        return technialDrawing;
+    public String getTechnicalDrawing() {
+        return technicalDrawing;
     }
 
-    public void setTechnialDrawing(String technialDrawing) {
-        this.technialDrawing = technialDrawing;
+    public void setTechnicalDrawing(String technicalDrawing) {
+        this.technicalDrawing = technicalDrawing;
     }
 
     public String getTorqueCurves() {

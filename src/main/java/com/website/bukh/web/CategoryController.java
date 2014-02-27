@@ -1,7 +1,7 @@
 package com.website.bukh.web;
 
 import com.website.bukh.entity.Category;
-import com.website.bukh.service.CategoryServie;
+import com.website.bukh.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,12 +18,12 @@ import java.util.List;
 public class CategoryController {
 
     @Autowired
-    private CategoryServie categoryServie;
+    private CategoryService categoryService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String list(Model model) {
 
-        List<Category> categoryList = categoryServie.list();
+        List<Category> categoryList = categoryService.list();
         model.addAttribute("categories", categoryList);
         return "content/categoryList";
     }
@@ -38,14 +38,14 @@ public class CategoryController {
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public String create(Category category, RedirectAttributes redirectAttributes) {
 
-        categoryServie.saveCategory(category);
+        categoryService.saveCategory(category);
         redirectAttributes.addFlashAttribute("message", "新增分类[" + category.getName() + "]成功");
         return "redirect:/admin/category";
     }
 
     @RequestMapping(value = "update/{id}", method = RequestMethod.GET)
     public String updateForm(@PathVariable("id") Long id, Model model) {
-        model.addAttribute("category", categoryServie.getOne(id));
+        model.addAttribute("category", categoryService.getOne(id));
         model.addAttribute("action", "update");
         return "content/categoryForm";
     }
@@ -53,7 +53,7 @@ public class CategoryController {
     @RequestMapping(value = "update", method = RequestMethod.POST)
     public String update(@ModelAttribute("category") Category category, RedirectAttributes redirectAttributes) {
 
-        categoryServie.saveCategory(category);
+        categoryService.saveCategory(category);
         redirectAttributes.addFlashAttribute("message", "更新分类[" + category.getName() + "]成功");
         return "redirect:/admin/category";
     }
@@ -61,7 +61,7 @@ public class CategoryController {
     @RequestMapping(value = "delete/{id}")
     public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
 
-        categoryServie.deleteCategory(id);
+        categoryService.deleteCategory(id);
         redirectAttributes.addFlashAttribute("message", "删除分类成功");
         return "redirect:/admin/category";
     }
@@ -69,7 +69,7 @@ public class CategoryController {
     @RequestMapping(value = "checkName")
     @ResponseBody
     public String checkName(@RequestParam("name") String name) {
-        if (categoryServie.findCategoryByName(name) == null) {
+        if (categoryService.findCategoryByName(name) == null) {
             return "true";
         } else {
             return "false";
@@ -79,7 +79,7 @@ public class CategoryController {
     @ModelAttribute
     public void getCategory(@RequestParam(value = "id", defaultValue = "-1") Long id, Model model) {
         if (id != -1) {
-            model.addAttribute("category", categoryServie.getOne(id));
+            model.addAttribute("category", categoryService.getOne(id));
         }
     }
 }
