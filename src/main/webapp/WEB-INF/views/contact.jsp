@@ -20,7 +20,7 @@
             <div id="ContentTop">
 
             </div>
-            <div id="Content" style="height: 1152px;">
+            <div id="Content">
                 <div id="MainContentWrapper">
                     <div id="MainContentTop">
 

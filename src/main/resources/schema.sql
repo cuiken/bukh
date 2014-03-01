@@ -57,3 +57,31 @@ create table tt_item_carousel(
   status varchar (1),
   primary key (id)
 )ENGINE=InnoDB;
+
+create table tt_region(
+  id bigint not null auto_increment,
+  name varchar (35),
+  value varchar (35),
+  primary key (id)
+)ENGINE=InnoDB;
+
+create table tt_country(
+  id bigint not null auto_increment,
+  name varchar (35),
+  value varchar (35),
+  region_id int,
+  primary key (id)
+)ENGINE=InnoDB;
+
+create table tt_dist(
+  id bigint not null auto_increment ,
+  name varchar (100),
+  province varchar (35),
+  zip_code varchar (35),
+  address varchar (100),
+  telephone varchar (35),
+  fax varchar(35),
+  email varchar (50),
+  website varchar (100),
+  primary key (id)
+)ENGINE=InnoDB;
