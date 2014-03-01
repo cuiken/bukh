@@ -63,4 +63,11 @@ public class ItemController {
         redirectAttributes.addFlashAttribute("message", "修改成功");
         return "redirect:/admin/item";
     }
+
+    @RequestMapping(value = "delete/{id}")
+    public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {
+        itemService.delete(id);
+        redirectAttributes.addFlashAttribute("message", "删除成功");
+        return "redirect:/admin/item";
+    }
 }

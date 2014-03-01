@@ -13,5 +13,10 @@
         <li id="sidepic-tab"><a href="${ctx}/admin/side_pic">首页导航图片</a></li>
         <li id="category-tab"><a href="${ctx}/admin/category">产品分类</a></li>
         <li id="item-tab"><a href="${ctx}/admin/item">产品管理</a></li>
+
+        <li class="nav-header"><i class="icon-book"></i>区域管理</li>
+        <li id="region-tab"><a href="${ctx}/admin/region">区域管理</a></li>
+        <li id="country-tab"><a href="${ctx}/admin/country">国家管理</a></li>
+        <li id="distributor-tab"><a href="${ctx}/admin/distributor">分销商管理</a></li>
     </ul>
 </div>

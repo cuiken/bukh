@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label">所属分类:</label>
+            <label class="control-label">产品型号:</label>
             <div class="controls">
                 <form:bsradiobuttons path="item.category.id" items="${categories}" itemValue="id" itemLabel="name" labelCssClass="inline"/>
             </div>
@@ -84,7 +84,7 @@
             editor = K.create('#item_content', {
                 resizeType : 1,
                 allowPreviewEmoticons : false,
-                allowImageUpload : false,
+                allowImageUpload : true,
                 items : [
                     'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
                     'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',

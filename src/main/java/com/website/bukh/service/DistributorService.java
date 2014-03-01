@@ -6,6 +6,8 @@ import com.website.bukh.dao.RegionDao;
 import com.website.bukh.entity.Country;
 import com.website.bukh.entity.Distributors;
 import com.website.bukh.entity.Region;
+import com.website.bukh.orm.Page;
+import com.website.bukh.orm.PropertyFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -72,5 +74,9 @@ public class DistributorService {
 
     public List<Distributors> getAllDists() {
         return distributorDao.getAll();
+    }
+
+    public Page<Country> searchCountry(final Page<Country> page, final List<PropertyFilter> filters) {
+        return countryDao.findPage(page, filters);
     }
 }
