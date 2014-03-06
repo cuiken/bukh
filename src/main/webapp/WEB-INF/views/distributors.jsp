@@ -25,8 +25,14 @@
                     <div id="Navigation_2nd">
                         <ul>
                             <li>
-                                <a>Distributors</a>
+                                <a href="${ctx}/distributors">Distributors</a>
                             </li>
+                            <c:forEach items="${regions}" var="region">
+                                <li>
+                                    <a href="${ctx}/distributors/#${region.name}">${region.name}</a>
+                                </li>
+                            </c:forEach>
+
                         </ul>
                     </div>
                 </div>

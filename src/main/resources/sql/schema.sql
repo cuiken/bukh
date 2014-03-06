@@ -83,5 +83,6 @@ create table tt_dist(
   fax varchar(35),
   email varchar (50),
   website varchar (100),
+  country_id int,
   primary key (id)
 )ENGINE=InnoDB;

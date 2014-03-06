@@ -1,9 +1,6 @@
 package com.website.bukh.web;
 
-import com.website.bukh.service.CarouselPicService;
-import com.website.bukh.service.CategoryService;
-import com.website.bukh.service.ItemService;
-import com.website.bukh.service.SidePicService;
+import com.website.bukh.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +21,8 @@ public class IndexController {
     private ItemService itemService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private DistributorService distributorService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String home(Model model) {
@@ -46,8 +45,9 @@ public class IndexController {
     }
 
     @RequestMapping(value = "distributors", method = RequestMethod.GET)
-    public String distributors() {
+    public String distributors(Model model) {
 
+        model.addAttribute("regions",distributorService.getAllRegions());
         return "distributors";
     }
 
