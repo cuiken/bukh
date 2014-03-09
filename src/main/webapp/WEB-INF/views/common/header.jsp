@@ -6,12 +6,12 @@
     </div>
     <div id="QuickNavigation">
         <div id="Language">
-                <span id="language-uk">
-                    <a href="?locale=en"><img src="${ctx}/static/images/uk.png"></a>
-                </span>
-              <span id="language-zh">
+            <span id="language-zh">
                     <a href="?locale=zh"><img src="${ctx}/static/images/zh.png"></a>
-                </span>
+            </span>
+            <span id="language-uk">
+                <a href="?locale=en"><img src="${ctx}/static/images/uk.png"></a>
+            </span>
         </div>
         <div class="usermenu">
             <ul>
