@@ -1,88 +1,115 @@
-create table ss_user(
- id bigint not null auto_increment,
- email varchar(255),
- login_name varchar(255) not null unique,
- name varchar(255),
- password varchar(255),
- salt varchar(64),
- status varchar(32) not null default 0,
- register_date timestamp not null default 0,
- primary key (id)
-)ENGINE=InnoDB;
+CREATE TABLE ss_user (
+  id            BIGINT       NOT NULL AUTO_INCREMENT,
+  email         VARCHAR(255),
+  login_name    VARCHAR(255) NOT NULL UNIQUE,
+  name          VARCHAR(255),
+  password      VARCHAR(255),
+  salt          VARCHAR(64),
+  status        VARCHAR(32)  NOT NULL DEFAULT 0,
+  register_date TIMESTAMP    NOT NULL DEFAULT 0,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_category(
-  id bigint not null auto_increment,
-  name varchar(35),
-  code varchar(35),
-  sort int,
-  status varchar(32) ,
-  primary key (id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_category (
+  id     BIGINT NOT NULL AUTO_INCREMENT,
+  name   VARCHAR(35),
+  code   VARCHAR(35),
+  sort   INT,
+  status VARCHAR(32),
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_side_pic(
-  id bigint not null auto_increment,
-  name varchar(35),
-  dir_path varchar (100),
-  link varchar (100),
-  description varchar (100),
-  sort int,
-  primary  key (id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_side_pic (
+  id          BIGINT NOT NULL AUTO_INCREMENT,
+  name        VARCHAR(35),
+  dir_path    VARCHAR(100),
+  link        VARCHAR(100),
+  description VARCHAR(100),
+  sort        INT,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_carousel_pic(
-  id bigint not null auto_increment,
-  dir_path varchar (100),
-  sort int ,
-  primary key(id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_carousel_pic (
+  id       BIGINT NOT NULL AUTO_INCREMENT,
+  dir_path VARCHAR(100),
+  sort     INT,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_item(
-  id bigint not null auto_increment,
-  name varchar (35),
-  title varchar (200),
-  short_title varchar (100),
-  content text,
-  product_brochure varchar (100),
-  technical_drawing varchar (100),
-  torque_curves varchar (100),
-  category_id int,
-  primary key (id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_item (
+  id                BIGINT NOT NULL AUTO_INCREMENT,
+  name              VARCHAR(35),
+  title             VARCHAR(200),
+  short_title       VARCHAR(100),
+  content           TEXT,
+  product_brochure  VARCHAR(100),
+  technical_drawing VARCHAR(100),
+  torque_curves     VARCHAR(100),
+  category_id       INT,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_item_carousel(
-  id bigint not null auto_increment,
-  item_id int,
-  small_size_path varchar (100),
-  large_size_path varchar (100),
-  status varchar (1),
-  primary key (id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_item_carousel (
+  id              BIGINT NOT NULL AUTO_INCREMENT,
+  item_id         INT,
+  small_size_path VARCHAR(100),
+  large_size_path VARCHAR(100),
+  status          VARCHAR(1),
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_region(
-  id bigint not null auto_increment,
-  name varchar (35),
-  value varchar (35),
-  primary key (id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_region (
+  id    BIGINT NOT NULL AUTO_INCREMENT,
+  name  VARCHAR(35),
+  value VARCHAR(35),
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_country(
-  id bigint not null auto_increment,
-  name varchar (35),
-  value varchar (35),
-  region_id int,
-  primary key (id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_country (
+  id        BIGINT NOT NULL AUTO_INCREMENT,
+  name      VARCHAR(35),
+  value     VARCHAR(35),
+  region_id INT,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
 
-create table tt_dist(
-  id bigint not null auto_increment ,
-  name varchar (100),
-  province varchar (35),
-  zip_code varchar (35),
-  address varchar (100),
-  telephone varchar (35),
-  fax varchar(35),
-  email varchar (50),
-  website varchar (100),
-  country_id int,
-  primary key (id)
-)ENGINE=InnoDB;
+CREATE TABLE tt_dist (
+  id         BIGINT NOT NULL AUTO_INCREMENT,
+  name       VARCHAR(100),
+  province   VARCHAR(35),
+  zip_code   VARCHAR(35),
+  address    VARCHAR(100),
+  telephone  VARCHAR(35),
+  fax        VARCHAR(35),
+  email      VARCHAR(50),
+  website    VARCHAR(100),
+  country_id INT,
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;
+
+CREATE TABLE tt_contact (
+  id           BIGINT NOT NULL AUTO_INCREMENT,
+  company_name VARCHAR(50),
+  name         VARCHAR(50),
+  address      VARCHAR(100),
+  post_code    VARCHAR(35),
+  city         VARCHAR(35),
+  telephone    VARCHAR(20),
+  email        VARCHAR(35),
+  subject      VARCHAR(35),
+  find_way      VARCHAR(35),
+  message      VARCHAR(255),
+  status       VARCHAR(10),
+  create_date  VARCHAR(25),
+  PRIMARY KEY (id)
+)
+  ENGINE =InnoDB;

@@ -18,5 +18,8 @@
         <li id="region-tab"><a href="${ctx}/admin/region">区域管理</a></li>
         <li id="country-tab"><a href="${ctx}/admin/country">国家管理</a></li>
         <li id="distributor-tab"><a href="${ctx}/admin/distributor">分销商管理</a></li>
+
+        <li class="nav-header"><i class="icon-book"></i>用户反馈</li>
+        <li id="contact-tab"><a href="${ctx}/admin/contact">用户反馈</a></li>
     </ul>
 </div>

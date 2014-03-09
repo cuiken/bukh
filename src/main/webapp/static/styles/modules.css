@@ -1425,7 +1425,7 @@ td.item-listing-on {
     margin:0 0 10px 0;
     padding:5px 0 5px 0;
     text-align: center;
-    background:#FFFFFF url(/_design/common/img/input/text-bg.gif) repeat-x left top;
+    background:#FFFFFF url(../images/text-bg.gif) repeat-x left top;
     border:1px solid #ccc;
 }
 #ActionBar {
@@ -1618,7 +1618,7 @@ input[type="email"],
 input[type="date"],
 input[type="search"],
 textarea {
-	background:#FFFFFF url(/_design/common/img/input/text-bg.gif) repeat-x left top;
+	background:#FFFFFF url(../images/text-bg.gif) repeat-x left top;
 	border:1px solid #ccc;
 }
 /*input {*/
@@ -1711,13 +1711,13 @@ input[type="checkbox"],
 }
 dt.left,
 .CheckOutProceedList dt.left {
-	background:transparent url(/_design/common/img/buttons/button1/button_left.gif) no-repeat;
+	background:transparent url(../images/button_left.gif) no-repeat;
 	width:7px;
 	height:22px;
 }
 dt.middle,
 .CheckOutProceedList dt.middle {
-	background:transparent url(/_design/common/img/buttons/button1/button_middle.gif) repeat-x;
+	background:transparent url(../images/button_middle.gif) repeat-x;
 	height:22px;
 	text-align: center;
 }
@@ -1737,7 +1737,7 @@ dt.middle .ahref a,
 }
 dt.right,
 .CheckOutProceedList dt.right {
-	background:transparent url(/_design/common/img/buttons/button1/button_right.gif) no-repeat;
+	background:transparent url(../images/button_right.gif) no-repeat;
 	width:7px;
 	height:22px;
 }

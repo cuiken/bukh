@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - BUKH</title>
     <link rel="stylesheet" href="${ctx}/static/lightbox/css/lightbox.css">
-    <link rel="stylesheet" href="${ctx}/static/styles/w_default.css">
     <link rel="stylesheet" href="${ctx}/static/styles/modules.css">
+    <link rel="stylesheet" href="${ctx}/static/styles/w_default.css">
     <link rel="stylesheet" href="${ctx}/static/styles/dynamic_width.css">
 </head>
 <body class="bodyCatId13 bodyPageId39">
@@ -22,10 +22,22 @@
             <div id="PictureElement">
                 <img src="${ctx}/static/images/corner-pe.png" class="rounded-corner"/>
 
-                <div id="peSlider3231">
-                    <a href="${ctx}/static/images/temp/VGT_DSC4289.jpg" rel="lightbox[motorer]">
-                        <img src="${ctx}/static/images/temp/VGT_DSC4289.w720.h250.crop.jpg"/>
-                    </a>
+                <div id="peSlider3231" class="cycle-slideshow">
+                    <div class="item" style="width: 720px; height: 250px; position: relative;">
+                        <a href="${ctx}/static/images/temp/VGT_DSC4289.jpg" rel="lightbox[motorer]">
+                            <img src="${ctx}/static/images/temp/VGT_DSC4289.w720.h250.crop.jpg"/>
+                        </a>
+                    </div>
+                    <div class="item" style="width: 720px; height: 250px; position: relative;">
+                        <a href="${ctx}/static/images/temp/VGT_DSC4319.jpg" rel="lightbox[motorer]">
+                            <img src="${ctx}/static/images/temp/VGT350-500_PRD.w720.h250.crop.jpg"/>
+                        </a>
+                    </div>
+                    <div class="item" style="width: 720px; height: 250px; position: relative;">
+                        <a href="${ctx}/static/images/temp/VGT_DSC4296.jpg" rel="lightbox[motorer]">
+                            <img src="${ctx}/static/images/temp/VGT_DSC4294.w720.h250.crop.jpg"/>
+                        </a>
+                    </div>
                 </div>
             </div>
             <div id="ContentTop">
@@ -96,10 +108,12 @@
 <%@include file="common/footer.jsp" %>
 
 <script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="${ctx}/static/jquery.cycle.all.min.js"></script>
 <script src="${ctx}/static/lightbox/js/lightbox-2.6.min.js"></script>
 <script>
     $(function () {
         $("#nav-products a").addClass("active");
+        $("#peSlider3231").cycle({ fx: "fade", easing: "", pager: "", next: "", prev: "", pause: 0, speed: 1000, timeout: 4000 });
     })
 </script>
 </body>

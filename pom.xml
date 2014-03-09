@@ -20,6 +20,7 @@
         <logback.version>1.0.13</logback.version>
         <commons-lang3.version>3.1</commons-lang3.version>
         <shiro.version>1.2.2</shiro.version>
+        <joda.version>2.2</joda.version>
         <jetty.version>7.6.10.v20130312</jetty.version>
         <sitemesh.version>2.4.2</sitemesh.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -170,6 +171,13 @@
         </dependency>
 
         <!-- JSON end -->
+
+        <!-- joda -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>${joda.version}</version>
+        </dependency>
 
         <!-- google java library -->
         <dependency>
