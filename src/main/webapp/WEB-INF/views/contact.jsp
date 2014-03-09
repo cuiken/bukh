@@ -33,9 +33,7 @@
                 <table cellpadding="0" cellspacing="2" border="0">
                     <tbody>
                     <tr>
-                        <td><p>Below you can contact us. The following contactform can be used for
-                            any unanswered questions you may have.&nbsp; We strive to answer all
-                            inquiries within 24 hours.</p></td>
+                        <td><p><spring:message code="contact.tips"/></p></td>
                     </tr>
                     </tbody>
                 </table>
@@ -68,74 +66,64 @@
                 <table cellpadding="0" cellspacing="2" border="0">
                     <tbody>
                     <tr>
-                        <td width="125">Telephone:</td>
+                        <td width="125"><spring:message code="contact.u.telephone"/> :</td>
                         <td>+45 74 62 20 88</td>
                     </tr>
                     <tr>
-                        <td width="125">E-mail:</td>
+                        <td width="125"><spring:message code="contact.u.email"/> :</td>
                         <td>
                             <a href="mailto:bukh@bukh.dk">bukh@bukh.dk</a>
                         </td>
                     </tr>
                     <tr>
-                        <td width="125">Website:</td>
+                        <td width="125"><spring:message code="contact.u.website"/> :</td>
                         <td><a href="http://www.bukh.dk">http://www.bukh.dk</a></td>
                     </tr>
                     </tbody>
                 </table>
                 <br>
 
-                <form action="${ctx}/contact/create" name="mail"
-                      method="post" id="validation_contact">
+                <form action="${ctx}/contact/create" name="mail" method="post" id="validation_contact">
                     <input type="hidden" name="action" value="send_mail">
                     <table cellpadding="0" cellspacing="2" border="0">
                         <tbody>
                         <tr class="contactform-company">
-                            <td width="125">Company name</td>
-                            <td><input name="companyName" value="" id="contactform_company"
-                                       class="form_input"></td>
+                            <td width="125"><spring:message code="contact.companyName"/> </td>
+                            <td><input name="companyName" value="" id="contactform_company"  class="form_input"></td>
                         </tr>
                         <tr class="contactform-name">
-                            <td>Name <span class="error_text">*</span></td>
-                            <td><input name="name" value="" id="contactform_name"
-                                       class="form_input"></td>
+                            <td><spring:message code="contact.name"/> <span class="error_text">*</span></td>
+                            <td><input name="name" value="" id="contactform_name" class="form_input"></td>
                         </tr>
                         <tr class="contactform-adress">
-                            <td>Address <span class="error_text"></span></td>
-                            <td><input name="address" value="" id="contactform_adress"
-                                       class="form_input"></td>
+                            <td><spring:message code="contact.address"/> <span class="error_text"></span></td>
+                            <td><input name="address" value="" id="contactform_adress"  class="form_input"></td>
                         </tr>
                         <tr class="contactform-zipcode">
-                            <td>Postcode <span class="error_text"></span></td>
-                            <td><input name="postCode" value=""
-                                       id="contactform_postcode" class="form_input"></td>
+                            <td><spring:message code="contact.postCode"/> <span class="error_text"></span></td>
+                            <td><input name="postCode" value="" id="contactform_postcode" class="form_input"></td>
                         </tr>
                         <tr class="contactform-city">
-                            <td>City <span class="error_text"></span></td>
-                            <td><input name="city" value="" id="contactform_city"
-                                       class="form_input"></td>
+                            <td><spring:message code="contact.city"/> <span class="error_text"></span></td>
+                            <td><input name="city" value="" id="contactform_city" class="form_input"></td>
                         </tr>
                         <tr class="contactform-phone">
-                            <td>Telephone <span class="error_text">*</span></td>
-                            <td><input name="telephone" value=""
-                                       id="contactform_telephone" class="form_input"></td>
+                            <td><spring:message code="contact.telephone"/> <span class="error_text">*</span></td>
+                            <td><input name="telephone" value="" id="contactform_telephone" class="form_input"></td>
                         </tr>
                         <tr class="contactform-mail">
-                            <td>E-mail <span class="error_text">*</span></td>
-                            <td><input name="email" value="" id="contactform_mail"
-                                       class="form_input"></td>
+                            <td><spring:message code="contact.email"/> <span class="error_text">*</span></td>
+                            <td><input name="email" value="" id="contactform_mail" class="form_input"></td>
                         </tr>
                         <tr class="contactform-subject">
-                            <td>Subject <span class="error_text">*</span></td>
-                            <td><input name="subject" value="" id="contactform_subject"
-                                       class="form_input"></td>
+                            <td><spring:message code="contact.subject"/> <span class="error_text">*</span></td>
+                            <td><input name="subject" value="" id="contactform_subject" class="form_input"></td>
                         </tr>
                         <tr class="contactform-ref">
-                            <td>Where did you find us?</td>
+                            <td><spring:message code="contact.findWay"/> </td>
                             <td>
-                                <select name="findWay"
-                                        class="form_input" id="contactformSelect">
-                                    <option value="Ikke valgt">--- Select here ---</option>
+                                <select name="findWay" class="form_input" id="contactformSelect">
+                                    <option value="Ikke valgt"><spring:message code="contact.findWay.default"/> </option>
                                     <option value="Searchengines like Google">Searchengines like
                                         Google
                                     </option>
@@ -150,16 +138,15 @@
                             </td>
                         </tr>
                         <tr class="contactform-message">
-                            <td valign="top">Message <span class="error_text">*</span></td>
-                            <td><textarea name="message" id="contactform_message"
-                                          class="form_input"></textarea></td>
+                            <td valign="top"><spring:message code="contact.message"/> <span class="error_text">*</span></td>
+                            <td><textarea name="message" id="contactform_message"  class="form_input"></textarea></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td valign="top" width="125">Spam check <span
-                                    class="error_text">*</span><br><span style="font-size:10px">Enter the 2 words as seen in the image to the right.</span>
+                            <td valign="top" width="125"><spring:message code="contact.check"/>
+                                <span class="error_text">*</span><br><span style="font-size:10px"><spring:message code="contact.check.tips"/> </span>
                             </td>
                             <td>
                                 <script type="text/javascript">
@@ -208,8 +195,8 @@
                                 <div class="button">
                                     <dl>
                                         <dt class="left"></dt>
-                                        <dt class="middle"><input type="submit" value="Send"
-                                                                  name="mail"></dt>
+                                        <dt class="middle">
+                                            <input type="submit" value="<spring:message code="contact.send"/>" name="mail"></dt>
                                         <dt class="right"></dt>
                                     </dl>
                                 </div>
