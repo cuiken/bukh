@@ -11,6 +11,7 @@
     <title>Contact - BUKH</title>
     <link rel="stylesheet" href="${ctx}/static/styles/modules.css">
     <link rel="stylesheet" href="${ctx}/static/styles/w_default.css">
+    <link href="${ctx}/static/jquery-validation/1.11.1/validate.css" type="text/css" rel="stylesheet"/>
 </head>
 <body class=" bodyCatId11 bodyPageId6  bodyPageTypeKontakt languageUK site1 ">
 <div id="Wrapper">
@@ -93,7 +94,7 @@
                         </tr>
                         <tr class="contactform-name">
                             <td><spring:message code="contact.name"/> <span class="error_text">*</span></td>
-                            <td><input name="name" value="" id="contactform_name" class="form_input"></td>
+                            <td><input name="name" value="" id="contactform_name" class="form_input required"></td>
                         </tr>
                         <tr class="contactform-adress">
                             <td><spring:message code="contact.address"/> <span class="error_text"></span></td>
@@ -109,15 +110,15 @@
                         </tr>
                         <tr class="contactform-phone">
                             <td><spring:message code="contact.telephone"/> <span class="error_text">*</span></td>
-                            <td><input name="telephone" value="" id="contactform_telephone" class="form_input"></td>
+                            <td><input name="telephone" value="" id="contactform_telephone" class="form_input required number"></td>
                         </tr>
                         <tr class="contactform-mail">
                             <td><spring:message code="contact.email"/> <span class="error_text">*</span></td>
-                            <td><input name="email" value="" id="contactform_mail" class="form_input"></td>
+                            <td><input name="email" value="" id="contactform_mail" class="form_input required email"></td>
                         </tr>
                         <tr class="contactform-subject">
                             <td><spring:message code="contact.subject"/> <span class="error_text">*</span></td>
-                            <td><input name="subject" value="" id="contactform_subject" class="form_input"></td>
+                            <td><input name="subject" value="" id="contactform_subject" class="form_input required"></td>
                         </tr>
                         <tr class="contactform-ref">
                             <td><spring:message code="contact.findWay"/> </td>
@@ -139,7 +140,7 @@
                         </tr>
                         <tr class="contactform-message">
                             <td valign="top"><spring:message code="contact.message"/> <span class="error_text">*</span></td>
-                            <td><textarea name="message" id="contactform_message"  class="form_input"></textarea></td>
+                            <td><textarea name="message" id="contactform_message"  class="form_input required"></textarea></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -168,18 +169,17 @@
                                                id="recaptcha_challenge_field"
                                                value=""></span>
                                     <input type="text" id="recaptcha_response_field" name="recaptcha_response_field"
-                                           style="width: 200px;" autocomplete="off">
+                                           style="width: 200px;" autocomplete="off" class="required">
 
                                 </div>
 
                                 <script type="text/javascript"
-                                        src="http://www.google.com/recaptcha/api/challenge?k=6LdJwO8SAAAAAGBPTKMv4mWI8NsEL34Kj15CXTui">
+                                        src="http://www.google.com/recaptcha/api/challenge?k=6LcrmfASAAAAACNNvHJ6Yz8LNHzRShdO2aqy-G2T">
                                 </script>
-                                <script type="text/javascript"
-                                        src="http://www.google.com/recaptcha/api/js/recaptcha.js"></script>
+
                                 <noscript>
                                     &lt;iframe
-                                    src="http://www.google.com/recaptcha/api/noscript?k=6LdJwO8SAAAAAGBPTKMv4mWI8NsEL34Kj15CXTui
+                                    src="http://www.google.com/recaptcha/api/noscript?k=6LcrmfASAAAAACNNvHJ6Yz8LNHzRShdO2aqy-G2T
                                     "
                                     height="300" width="500" frameborder="0"&gt;&lt;/iframe&gt;&lt;br&gt;
                                     &lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;
@@ -221,10 +221,13 @@
 <div style="clear: both;"></div>
 </div>
 <%@include file="common/footer.jsp" %>
-<script type="text/javascript" src="${ctx}/static/jquery/jquery.min.js"></script>
+<script src="${ctx}/static/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="${ctx}/static/jquery-validation/1.11.1/jquery.validate.min.js" type="text/javascript"></script>
+<script src="${ctx}/static/jquery-validation/1.11.1/messages_bs_zh.js" type="text/javascript"></script>
 <script>
     $(function () {
         $("#nav-contact a").addClass("active");
+        $("#validation_contact").validate();
     })
 </script>
 </body>
