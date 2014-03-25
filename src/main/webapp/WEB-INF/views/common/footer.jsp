@@ -14,7 +14,7 @@
             <li class="ContactDataMail last"><span>E-mail: <a href="mailto:bukh@bukh.dk">bukh@bukh.dk</a></span></li>
         </ul>
         <div id="FooterMap">
-            <a style="width: 100%; height: 100%; display: block;" href="http://www.bukh.dk/distributors">&nbsp;</a>
+            <a style="width: 100%; height: 100%; display: block;" href="${ctx}/distributors">&nbsp;</a>
         </div>
         <div id="FooterDeveloper">
             <span>&copy; BUKH A/S 2014. All rights reserved.</span><br/>

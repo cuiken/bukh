@@ -25,7 +25,7 @@
                     <div id="Navigation_2nd">
                         <ul>
                             <li>
-                                <a href="${ctx}/distributors">Distributors</a>
+                                <a href="${ctx}/distributors"><spring:message code="distributors.title"/> </a>
                             </li>
                             <c:forEach items="${regions}" var="region">
                                 <li>
@@ -41,7 +41,7 @@
                     <div id="MainContentTop">
                     </div>
                     <div id="DestributersMainContent">
-                        <h1>Distributors</h1>
+                        <h1><spring:message code="distributors.title"/> </h1>
 
                         <div id="WorldMap">
                             <img id="imagemap" src="${ctx}/static/images/map/map.png" width="693" height="339"
@@ -66,7 +66,7 @@
                             </map>
                         </div>
                         <div id="WorldChooser">
-                            Region:
+                            <spring:message code="distributors.region"/> :
                             <select class="WorldRegionPicker">
                                 <option selected="selected">Choose region</option>
                                 <option>North America</option>
@@ -77,7 +77,7 @@
                                 <option>Oceania</option>
                             </select>
 
-                            Country:
+                            <spring:message code="distributors.country"/> :
                             <select class="WorldCountryPicker" disabled="disabled">
                                 <option selected="selected">Choose country</option>
                                 <option class="North-America">Canada</option>
