@@ -1,5 +1,6 @@
 package com.website.bukh.web;
 
+import com.website.bukh.entity.Item;
 import com.website.bukh.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -55,7 +56,7 @@ public class IndexController {
     public String product(Model model) {
 
         model.addAttribute("categories", categoryService.list());
-        model.addAttribute("product", itemService.getOne(2L));
+        model.addAttribute("product", new Item());
 
         return "products";
     }
