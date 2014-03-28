@@ -1,6 +1,7 @@
 package com.website.bukh.entity;
 
 import com.google.common.collect.Lists;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import javax.persistence.*;
@@ -41,6 +42,11 @@ public class Region extends IdEntity {
 
     public void setCountries(List<Country> countries) {
         this.countries = countries;
+    }
+
+    @Transient
+    public String getDisplayName() {
+        return StringUtils.replace(name, " ", "-");
     }
 
     @Override

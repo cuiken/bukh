@@ -29,7 +29,7 @@
                             </li>
                             <c:forEach items="${regions}" var="region">
                                 <li>
-                                    <a href="${ctx}/distributors/#${region.name}">${region.name}</a>
+                                    <a href="${ctx}/distributors/#${region.displayName}">${region.name}</a>
                                 </li>
                             </c:forEach>
 
