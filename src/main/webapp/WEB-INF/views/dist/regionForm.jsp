@@ -28,7 +28,7 @@
             <label class="control-label">中文名称:</label>
 
             <div class="controls">
-                <input type="text" id="value" name="value" value="${region.value}" class="input-large" minlength="3"/>
+                <input type="text" id="value" name="value" value="${region.value}" class="input-large required" minlength="2"/>
             </div>
         </div>
         <div class="form-actions">

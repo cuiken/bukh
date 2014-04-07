@@ -79,4 +79,8 @@ public class DistributorService {
     public Page<Country> searchCountry(final Page<Country> page, final List<PropertyFilter> filters) {
         return countryDao.findPage(page, filters);
     }
+
+    public List<Country> getCountryByRegion(Long regionId) {
+        return countryDao.findBy("region.id", regionId);
+    }
 }

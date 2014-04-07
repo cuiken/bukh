@@ -1,3 +1,9 @@
+CREATE DATABASE IF NOT EXISTS bukh
+  DEFAULT CHARSET utf8
+  COLLATE utf8_general_ci;
+
+USE bukh;
+
 CREATE TABLE ss_user (
   id            BIGINT       NOT NULL AUTO_INCREMENT,
   email         VARCHAR(255),
@@ -106,7 +112,7 @@ CREATE TABLE tt_contact (
   telephone    VARCHAR(20),
   email        VARCHAR(35),
   subject      VARCHAR(35),
-  find_way      VARCHAR(35),
+  find_way     VARCHAR(35),
   message      VARCHAR(255),
   status       VARCHAR(10),
   create_date  VARCHAR(25),

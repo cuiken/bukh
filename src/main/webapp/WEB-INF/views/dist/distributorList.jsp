@@ -10,6 +10,17 @@
         $(document).ready(function () {
             $("#distributor-tab").addClass("active");
             $("#distributor-tab a").append("<i class='icon-remove-circle'></i>");
+
+            $("#region").change(function(){
+                $.ajax({
+                    url:"${ctx}/admin/country/json?pid="+this.value,
+                    type:'get',
+                    dataType:'json',
+                    success:function(data){
+
+                    }
+                });
+            });
         });
     </script>
 </head>
@@ -21,7 +32,21 @@
         <button data-dismiss="alert" class="close">×</button>
             ${message}</div>
 </c:if>
-
+<div class="row">
+    <div class="span8 offset2">
+        区域：
+        <select id="region" class="required">
+            <option value="0">--请选择--</option>
+            <c:forEach items="${region}" var="region">
+                <option value="${region.id}">${region.value}</option>
+            </c:forEach>
+        </select>
+        国家/地区：
+        <select id="country" class="required">
+            <option>--请选择--</option>
+        </select>
+    </div>
+</div>
 <table id="contentTable" class="table table-bordered table-hover">
     <thead>
     <tr>

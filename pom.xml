@@ -292,6 +292,16 @@
                 <version>1.7</version>
             </plugin>
 
+            <!-- war打包插件, 设定war包名称不带版本号 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <warName>${project.artifactId}</warName>
+                </configuration>
+            </plugin>
+
             <!-- jetty插件, 设定context path与spring profile -->
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>

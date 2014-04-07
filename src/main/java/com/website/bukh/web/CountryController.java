@@ -2,6 +2,7 @@ package com.website.bukh.web;
 
 import com.google.common.collect.Maps;
 import com.website.bukh.entity.Country;
+import com.website.bukh.mapper.JsonMapper;
 import com.website.bukh.orm.Page;
 import com.website.bukh.orm.PageRequest;
 import com.website.bukh.orm.PropertyFilter;
@@ -10,10 +11,7 @@ import com.website.bukh.util.Servlets;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
@@ -30,10 +28,11 @@ public class CountryController {
     Page<Country> page = new Page<Country>();
 
     private static Map<String, String> sortTypes = Maps.newLinkedHashMap();
+
     static {
         sortTypes.put("auto", "自动");
         sortTypes.put("title", "E标题");
-        sortTypes.put("region","区域");
+        sortTypes.put("region", "区域");
     }
 
     @Autowired
@@ -47,13 +46,13 @@ public class CountryController {
         Map<String, Object> searchParams = Servlets.getParametersStartingWith(request, "filter_");
         page.setPageNo(pageNumber);
 
-        if("auto".equals(sortType)){
+        if ("auto".equals(sortType)) {
             page.setOrderBy("id");
             page.setOrderDir(PageRequest.Sort.DESC);
-        }else if("title".equals(sortType)){
+        } else if ("title".equals(sortType)) {
             page.setOrderBy("name");
             page.setOrderDir(PageRequest.Sort.ASC);
-        }else {
+        } else {
             page.setOrderBy("region");
             page.setOrderDir(PageRequest.Sort.ASC);
         }
@@ -101,5 +100,13 @@ public class CountryController {
         distributorService.deleteCountry(id);
         redirectAttributes.addFlashAttribute("message", "删除成功");
         return "redirect:/admin/country";
+    }
+
+    @RequestMapping(value = "json")
+    @ResponseBody
+    public String getJson(@RequestParam("pid") Long id) {
+        List<Country> countries = distributorService.getCountryByRegion(id);
+        JsonMapper mapper = JsonMapper.buildNormalMapper();
+        return mapper.toJson(countries);
     }
 }

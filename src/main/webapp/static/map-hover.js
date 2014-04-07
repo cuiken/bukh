@@ -59,31 +59,6 @@ var region = "#info";
             var src = jQuery("#imagemap").attr("src").replace("/static/images/map/map-australia.png", lastHover);
             jQuery("#imagemap").attr("src", src);
         });
-
-	jQuery(".area-nordamerika").mousedown(function() {
-		showPage("#Nord-Amerika");
-		jQuery(".WorldRegionPicker").find("option:contains('Nord Amerika')").attr('selected','selected');
-	});
-	jQuery(".area-sydamerika").mousedown(function() {
-		showPage("#Syd-Amerika");
-		jQuery(".WorldRegionPicker").find("option:contains('Syd Amerika')").attr('selected','selected');
-	});
-	jQuery(".area-australien").mousedown(function() { 
-		showPage("#Oceanien");
-		jQuery(".WorldRegionPicker").find("option:contains('Oceanien')").attr('selected','selected');
-	});
-	jQuery(".area-europa").mousedown(function() {
-		showPage("#Europa");
-		jQuery(".WorldRegionPicker").find("option:contains('Europa')").attr('selected','selected');
-	});
-	jQuery(".area-afrika").mousedown(function() {
-		showPage("#Afrika");
-		jQuery(".WorldRegionPicker").find("option:contains('Afrika')").attr('selected','selected');
-	});
-	jQuery(".area-asien").mousedown(function() {
-		showPage("#Asien");
-		jQuery(".WorldRegionPicker").find("option:contains('Asien')").attr('selected','selected');
-	});
 	
 	jQuery(".area-northamerica").mousedown(function() {
 		showPage("#North-America");
@@ -113,55 +88,30 @@ var region = "#info";
 	
 	/* SECONDARY MENU */
 	jQuery("#Navigation_2nd ul li#Li_PageItem13").mousedown(function() {
-		showPage("#Nord-Amerika");
-		jQuery(".WorldRegionPicker").find("option:contains('Nord Amerika')").attr('selected','selected');
-	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem14").mousedown(function() { 
-		showPage("#Syd-Amerika");
-		jQuery(".WorldRegionPicker").find("option:contains('Syd Amerika')").attr('selected','selected');
-	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem15").mousedown(function() { 
-		showPage("#Europa");
-		jQuery(".WorldRegionPicker").find("option:contains('Europa')").attr('selected','selected');
-	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem16").mousedown(function() { 
-		showPage("#Afrika");
-		jQuery(".WorldRegionPicker").find("option:contains('Afrika')").attr('selected','selected');
-	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem17").mousedown(function() { 
-		showPage("#Asien");
-		jQuery(".WorldRegionPicker").find("option:contains('Asien')").attr('selected','selected');
-	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem18").mousedown(function() {
-		showPage("#Oceanien");
-		jQuery(".WorldRegionPicker").find("option:contains('Oceanien')").attr('selected','selected');
-	});
-	
-	jQuery("#Navigation_2nd ul li#Li_PageItem13_uk").mousedown(function() {
 		showPage("#North-America");
-		jQuery(".WorldRegionPicker").find("option:contains('North America')").attr('selected','selected');
+		jQuery(".WorldRegionPicker").find("option:contains('North-America')").attr('selected','selected');
 	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem14_uk").mousedown(function() { 
+	jQuery("#Navigation_2nd ul li#Li_PageItem14").mousedown(function() {
 		showPage("#South-America");
-		jQuery(".WorldRegionPicker").find("option:contains('South America')").attr('selected','selected');
+		jQuery(".WorldRegionPicker").find("option:contains('South-America')").attr('selected','selected');
 	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem15_uk").mousedown(function() { 
+	jQuery("#Navigation_2nd ul li#Li_PageItem15").mousedown(function() {
 		showPage("#Europe");
 		jQuery(".WorldRegionPicker").find("option:contains('Europe')").attr('selected','selected');
 	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem16_uk").mousedown(function() { 
+	jQuery("#Navigation_2nd ul li#Li_PageItem16").mousedown(function() {
 		showPage("#Africa");
 		jQuery(".WorldRegionPicker").find("option:contains('Africa')").attr('selected','selected');
 	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem17_uk").mousedown(function() { 
+	jQuery("#Navigation_2nd ul li#Li_PageItem17").mousedown(function() {
 		showPage("#Asia");
 		jQuery(".WorldRegionPicker").find("option:contains('Asia')").attr('selected','selected');
 	});
-	jQuery("#Navigation_2nd ul li#Li_PageItem18_uk").mousedown(function() {
+	jQuery("#Navigation_2nd ul li#Li_PageItem18").mousedown(function() {
 		showPage("#Oceania");
 		jQuery(".WorldRegionPicker").find("option:contains('Oceania')").attr('selected','selected');
 	});
-	
+
 	/* REGION AND COUNTRY */
 	jQuery('.WorldRegionPicker').change(function() {
 		region = "#"+jQuery('.WorldRegionPicker').val().replace(/ /g, '-');

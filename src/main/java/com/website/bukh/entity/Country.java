@@ -1,5 +1,6 @@
 package com.website.bukh.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.common.collect.Lists;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 
@@ -37,6 +38,7 @@ public class Country extends IdEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "region_id")
+    @JsonIgnore
     public Region getRegion() {
         return region;
     }
@@ -46,6 +48,7 @@ public class Country extends IdEntity {
     }
 
     @OneToMany(mappedBy = "country", fetch = FetchType.LAZY, cascade = {CascadeType.REMOVE}, orphanRemoval = true)
+    @JsonIgnore
     public List<Distributors> getDistributorses() {
         return distributorses;
     }

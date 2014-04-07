@@ -28,13 +28,13 @@
             <label class="control-label">中文名称:</label>
 
             <div class="controls">
-                <input type="text" id="value" name="value" value="${country.value}" class="input-large" minlength="2"/>
+                <input type="text" id="value" name="value" value="${country.value}" class="input-large required" minlength="2"/>
             </div>
         </div>
         <div class="control-group">
             <label for="" class="control-label">请选择区域:</label>
             <div class="controls">
-                <form:bsradiobuttons path="country.region.id" items="${regions}" itemValue="id" itemLabel="name" labelCssClass="inline"/>
+                <form:bsradiobuttons path="country.region.id" items="${regions}" itemValue="id" itemLabel="value" labelCssClass="inline"/>
             </div>
         </div>
 
