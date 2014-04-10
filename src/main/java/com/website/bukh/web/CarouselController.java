@@ -23,8 +23,6 @@ import java.io.IOException;
 @RequestMapping(value = "/admin/carousel")
 public class CarouselController {
 
-    private static final String CAROUSEL_PIC_DIR = Constants.PIC_DIR + File.separator + "carousel_pic";
-
     @Autowired
     private CarouselPicService carouselPicService;
 
@@ -48,7 +46,7 @@ public class CarouselController {
                          @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
         if (!file.isEmpty()) {
             copyFile(file);
-            entity.setDirPath(CAROUSEL_PIC_DIR + File.separator + file.getOriginalFilename());
+            entity.setDirPath(Constants.CAROUSEL_PIC_DIR + File.separator + file.getOriginalFilename());
         }
         carouselPicService.save(entity);
         redirectAttributes.addFlashAttribute("message", "新增成功");
@@ -57,7 +55,7 @@ public class CarouselController {
 
     private void copyFile(MultipartFile file) throws IOException {
 
-        File targetDir = new File(Constants.ROOT_PATH + File.separator + CAROUSEL_PIC_DIR);
+        File targetDir = new File(Constants.getRootPath() + File.separator + Constants.CAROUSEL_PIC_DIR);
         if (!targetDir.exists()) {
             targetDir.mkdir();
         }

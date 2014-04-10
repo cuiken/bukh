@@ -21,7 +21,6 @@ import java.util.List;
 @RequestMapping(value = "/admin/side_pic")
 public class SidePicController {
 
-    private static final String SIDE_PIC_DIR = Constants.PIC_DIR + File.separator + Constants.SIDE_PIC_PATH;
     @Autowired
     private SidePicService sidePicService;
 
@@ -53,7 +52,7 @@ public class SidePicController {
 
         if (!file.isEmpty()) {
             copyFile(file);
-            sidePic.setDirPath(SIDE_PIC_DIR+File.separator+file.getOriginalFilename());
+            sidePic.setDirPath(Constants.SIDE_PIC_DIR + File.separator + file.getOriginalFilename());
         }
         sidePicService.saveSidePic(sidePic);
         redirectAttributes.addFlashAttribute("message", "新增成功");
@@ -65,7 +64,7 @@ public class SidePicController {
                          @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) throws Exception {
         if (!file.isEmpty()) {
             copyFile(file);
-            sidePic.setDirPath(SIDE_PIC_DIR+File.separator+file.getOriginalFilename());
+            sidePic.setDirPath(Constants.SIDE_PIC_DIR + File.separator + file.getOriginalFilename());
         }
 
         sidePicService.saveSidePic(sidePic);
@@ -75,7 +74,7 @@ public class SidePicController {
 
     private void copyFile(MultipartFile file) throws IOException {
 
-        File targetDir = new File(Constants.ROOT_PATH + File.separator + SIDE_PIC_DIR);
+        File targetDir = new File(Constants.getRootPath() + File.separator + Constants.SIDE_PIC_DIR);
         if (!targetDir.exists()) {
             targetDir.mkdir();
         }
