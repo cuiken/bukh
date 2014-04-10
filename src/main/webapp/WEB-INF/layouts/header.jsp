@@ -7,7 +7,7 @@
                 <a class="btn btn-navbar" data-toggle="collapse"
                    data-target=".nav-collapse"> <span class="icon-bar"></span> <span
                         class="icon-bar"></span> <span class="icon-bar"></span>
-                </a> <a class="brand" href="${ctx}"><i class="icon-cloud-upload"></i>&nbsp;BUKH</a>
+                </a> <a class="brand" href="${ctx}/"><i class="icon-cloud-upload"></i>&nbsp;BUKH</a>
                 <div class="nav-collapse collapse ">
                     <shiro:user>
                         <ul class="nav pull-right">

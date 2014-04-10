@@ -2,7 +2,7 @@
 
 <div id="Top">
     <div id="Logo">
-        <a href="${ctx}"><img src="${ctx}/static/images/logo.png" alt=""></a>
+        <a href="${ctx}/"><img src="${ctx}/static/images/logo.png" alt=""></a>
     </div>
     <div id="QuickNavigation">
         <div id="Language">
@@ -22,7 +22,7 @@
     <div id="Navigation">
         <ul>
             <li id="nav-home">
-                <a href="${ctx}"><span><spring:message code="nav.home"/> </span></a>
+                <a href="${ctx}/"><span><spring:message code="nav.home"/> </span></a>
             </li>
             <li id="nav-profil"><a href="${ctx}/profil"><span><spring:message code="nav.bukh"/> </span></a></li>
             <li id="nav-products"><a href="${ctx}/products"><span><spring:message code="nav.products"/> </a></li>
