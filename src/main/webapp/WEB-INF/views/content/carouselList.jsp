@@ -35,7 +35,11 @@
         <tr>
             <td>${carousel.sort}</td>
             <td class="thumbnail_td"><img class="img-rounded ad" src="${ctx}/${carousel.dirPath}"></td>
-            <td><a href="${ctx}/admin/carousel/delete/${carousel.id}">删除</a></td>
+            <td>
+                <a href="${ctx}/admin/carousel/update/${carousel.id}">修改</a>
+                &nbsp;
+                <a href="${ctx}/admin/carousel/delete/${carousel.id}">删除</a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>

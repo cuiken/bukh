@@ -39,7 +39,11 @@
             <td class="thumbnail_td"><img class="img-rounded" src="${ctx}/${pic.dirPath}"></td>
             <td><a href="${ctx}/admin/side_pic/update/${pic.id}">${pic.name}</a></td>
             <td>${pic.description}</td>
-            <td><a href="${ctx}/admin/side_pic/delete/${pic.id}">删除</a></td>
+            <td>
+                <a href="${ctx}/admin/side_pic/update/${pic.id}">修改</a>
+                &nbsp;
+                <a href="${ctx}/admin/side_pic/delete/${pic.id}">删除</a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>

@@ -11,7 +11,6 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -20,7 +19,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/admin/side_pic")
 public class SidePicController {
-
+    private File targetDir = new File(Constants.getRootPath() + File.separator + Constants.SIDE_PIC_DIR);
     @Autowired
     private SidePicService sidePicService;
 
@@ -51,7 +50,7 @@ public class SidePicController {
     public String create(ForSidePic sidePic, @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) throws Exception {
 
         if (!file.isEmpty()) {
-            copyFile(file);
+            Constants.saveFile(file, targetDir);
             sidePic.setDirPath(Constants.SIDE_PIC_DIR + File.separator + file.getOriginalFilename());
         }
         sidePicService.saveSidePic(sidePic);
@@ -63,24 +62,13 @@ public class SidePicController {
     public String update(@ModelAttribute("sidePic") ForSidePic sidePic,
                          @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) throws Exception {
         if (!file.isEmpty()) {
-            copyFile(file);
+            Constants.saveFile(file, targetDir);
             sidePic.setDirPath(Constants.SIDE_PIC_DIR + File.separator + file.getOriginalFilename());
         }
 
         sidePicService.saveSidePic(sidePic);
         redirectAttributes.addFlashAttribute("message", "更新成功");
         return "redirect:/admin/side_pic";
-    }
-
-    private void copyFile(MultipartFile file) throws IOException {
-
-        File targetDir = new File(Constants.getRootPath() + File.separator + Constants.SIDE_PIC_DIR);
-        if (!targetDir.exists()) {
-            targetDir.mkdir();
-        }
-        File target = new File(targetDir, file.getOriginalFilename());
-        file.transferTo(target);
-
     }
 
     @RequestMapping(value = "delete/{id}")

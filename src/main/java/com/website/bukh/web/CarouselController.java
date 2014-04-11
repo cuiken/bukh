@@ -23,6 +23,8 @@ import java.io.IOException;
 @RequestMapping(value = "/admin/carousel")
 public class CarouselController {
 
+    private File targetDir = new File(Constants.getRootPath() + File.separator + Constants.CAROUSEL_PIC_DIR);
+    private static final String RELATIVE_PATH = Constants.CAROUSEL_PIC_DIR + File.separator;
     @Autowired
     private CarouselPicService carouselPicService;
 
@@ -41,28 +43,36 @@ public class CarouselController {
         return "content/carouselForm";
     }
 
-    @RequestMapping(value = "create", method = RequestMethod.POST)
-    public String create(CarouselPicture entity,
-                         @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
+    @RequestMapping(value = "update/{id}", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("carousel", carouselPicService.getOne(id));
+        model.addAttribute("action", "update");
+        return "content/carouselForm";
+    }
+
+    @RequestMapping(value = "update", method = RequestMethod.POST)
+    public String update(CarouselPicture entity, @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
+
         if (!file.isEmpty()) {
-            copyFile(file);
-            entity.setDirPath(Constants.CAROUSEL_PIC_DIR + File.separator + file.getOriginalFilename());
+            Constants.saveFile(file, targetDir);
+            entity.setDirPath(RELATIVE_PATH + file.getOriginalFilename());
+        }
+        carouselPicService.save(entity);
+        redirectAttributes.addFlashAttribute("message", "修改成功");
+        return "redirect:/admin/carousel";
+    }
+
+    @RequestMapping(value = "create", method = RequestMethod.POST)
+    public String create(CarouselPicture entity, @RequestParam MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
+        if (!file.isEmpty()) {
+            Constants.saveFile(file, targetDir);
+            entity.setDirPath(RELATIVE_PATH + file.getOriginalFilename());
         }
         carouselPicService.save(entity);
         redirectAttributes.addFlashAttribute("message", "新增成功");
         return "redirect:/admin/carousel";
     }
 
-    private void copyFile(MultipartFile file) throws IOException {
-
-        File targetDir = new File(Constants.getRootPath() + File.separator + Constants.CAROUSEL_PIC_DIR);
-        if (!targetDir.exists()) {
-            targetDir.mkdir();
-        }
-        File target = new File(targetDir, file.getOriginalFilename());
-        file.transferTo(target);
-
-    }
 
     @RequestMapping(value = "delete/{id}")
     public String delete(@PathVariable("id") Long id, RedirectAttributes redirectAttributes) {

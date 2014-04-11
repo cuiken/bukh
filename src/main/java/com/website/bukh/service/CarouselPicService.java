@@ -26,6 +26,10 @@ public class CarouselPicService {
         return carousePicDao.getAll();
     }
 
+    public CarouselPicture getOne(Long id) {
+        return carousePicDao.get(id);
+    }
+
     public void delete(Long id) {
         carousePicDao.delete(id);
     }

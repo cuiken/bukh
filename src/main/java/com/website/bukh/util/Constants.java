@@ -1,6 +1,10 @@
 package com.website.bukh.util;
 
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created by ken.cui on 14-2-22.
@@ -20,6 +24,18 @@ public class Constants {
             return OS_WINDOW;
         } else {
             return OS_LINUX;
+        }
+    }
+
+    public static void saveFile(MultipartFile file, File targetDir) throws IOException {
+
+        if (!file.isEmpty()) {
+            if (!targetDir.exists()) {
+                targetDir.mkdirs();
+            }
+            File target = new File(targetDir, file.getOriginalFilename());
+            file.transferTo(target);
+
         }
     }
 }
