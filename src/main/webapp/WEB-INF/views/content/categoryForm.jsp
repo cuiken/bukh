@@ -37,7 +37,8 @@
         $("#inputForm").validate({
             rules: {
                 name: {
-                    remote: "${ctx}/admin/category/checkName"
+                    remote: "${ctx}/admin/category/checkName?oldName="
+                            + encodeURIComponent('${category.name}')
                 }
             },
             messages: {

@@ -13,8 +13,8 @@ import javax.persistence.Table;
 public class Category extends IdEntity {
     private String name;
     private String code;
-    private String sort;
-    private String status;
+    private Integer sort;
+    private String language;
 
     public String getName() {
         return name;
@@ -32,20 +32,20 @@ public class Category extends IdEntity {
         this.code = code;
     }
 
-    public String getSort() {
+    public Integer getSort() {
         return sort;
     }
 
-    public void setSort(String sort) {
+    public void setSort(Integer sort) {
         this.sort = sort;
     }
 
-    public String getStatus() {
-        return status;
+    public String getLanguage() {
+        return language;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setLanguage(String language) {
+        this.language = language;
     }
 
     @Override

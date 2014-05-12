@@ -68,8 +68,8 @@ public class CategoryController {
 
     @RequestMapping(value = "checkName")
     @ResponseBody
-    public String checkName(@RequestParam("name") String name) {
-        if (categoryService.findCategoryByName(name) == null) {
+    public String checkName(@RequestParam("name") String name, @RequestParam("oldName") String oldName) {
+        if (categoryService.isCategoryUnique(name, oldName)) {
             return "true";
         } else {
             return "false";

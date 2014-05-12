@@ -78,14 +78,14 @@
                                 </a>
                                 <br/>
                                 <span>Click for enlargement</span>
-                                <br/><br/>
+                                <br><br>
                                 <a>
-                                    <img src="${ctx}/static/images/temp/bukh_technical_drawing.JPG"/>
-                                    <br/><span>Technical drawing</span>
+                                    <img src="${ctx}/static/images/temp/bukh_technical_drawing.JPG">
+                                    <br><span>Technical drawing</span>
                                 </a>
                                 <br/><br/>
                                 <h4>
-                                    <img src="${ctx}/static/images/pdf-headline.png"/>
+                                    <img src="${ctx}/static/images/pdf-headline.png">
                                 </h4>
 
                                 <p>

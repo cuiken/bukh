@@ -26,7 +26,7 @@ CREATE TABLE tt_category (
   name   VARCHAR(35),
   code   VARCHAR(35),
   sort   INT,
-  status VARCHAR(32),
+  language VARCHAR(32),
   PRIMARY KEY (id)
 );
 

@@ -34,7 +34,11 @@ public class CategoryService {
         return categoryDao.get(id);
     }
 
-    public Category findCategoryByName(String name) {
-        return categoryDao.findUniqueBy("name", name);
+    public boolean isCategoryUnique(String newValue, String oldValue) {
+        return categoryDao.isPropertyUnique("name", newValue, oldValue);
+    }
+
+    public List<Category> getCategoriesByLang(String language) {
+        return categoryDao.findBy("language", language);
     }
 }
